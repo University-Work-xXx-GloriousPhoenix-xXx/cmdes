@@ -1,6 +1,7 @@
 ﻿using System.Collections.Concurrent;
+using Lab2.Logging;
 
-namespace Lab2.MSNNodes;
+namespace Lab2.SimulationNodes;
 
 public class Dispose(double serviceTime) : IDisposeNode
 {
@@ -27,6 +28,7 @@ public class Dispose(double serviceTime) : IDisposeNode
                 continue;
             }
 
+            SimulationLogger.Log("DISPOSE", $"Disposing request {request.Id}", ConsoleColor.Magenta);
             await Task.Delay(TimeSpan.FromSeconds(serviceTime), ct);
 
             request.Dispose();

@@ -1,3 +1,3 @@
-﻿namespace Lab2.MSNNodes;
+﻿namespace Lab2.SimulationNodes;
 
 public interface IGeneratorNode : IParameterizedNode { }

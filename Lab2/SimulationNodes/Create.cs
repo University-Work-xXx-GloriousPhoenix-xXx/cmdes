@@ -1,6 +1,7 @@
 ﻿using Lab2.Distributions;
+using Lab2.Logging;
 
-namespace Lab2.MSNNodes;
+namespace Lab2.SimulationNodes;
 
 public class Create(IDistributionStrategy distribution) : IGeneratorNode
 {
@@ -32,6 +33,8 @@ public class Create(IDistributionStrategy distribution) : IGeneratorNode
             var delay = _distribution.Generate();
             await Task.Delay(TimeSpan.FromSeconds(delay), ct);
             var request = new Request();
+
+            SimulationLogger.Log("CREATE", $"Created request {request.Id}", ConsoleColor.Cyan);
 
             foreach (var node in _nextNodes)
             {

@@ -1,7 +1,8 @@
-﻿using System.Collections.Concurrent;
-using Lab2.Distributions;
+﻿using Lab2.Distributions;
+using Lab2.Logging;
+using System.Collections.Concurrent;
 
-namespace Lab2.MSNNodes;
+namespace Lab2.SimulationNodes;
 
 public class Process(IDistributionStrategy distribution, string name) : IProcessingNode
 {
@@ -16,6 +17,7 @@ public class Process(IDistributionStrategy distribution, string name) : IProcess
     private IDistributionStrategy _distribution = distribution;
     private readonly List<IReceiverNode> _nextNodes = [];
     private readonly ConcurrentQueue<Request> _requestQueue = [];
+    private static readonly Lock ConsoleLock = new();
 
     public void AddNextNode(IReceiverNode node)
     {
@@ -48,8 +50,12 @@ public class Process(IDistributionStrategy distribution, string name) : IProcess
                 continue;
             }
 
+            SimulationLogger.Log(name, $"Started processing request {request.Id}", ConsoleColor.Yellow);
+
             var serviceTime = _distribution.Generate();
             await Task.Delay(TimeSpan.FromSeconds(serviceTime), ct);
+
+            SimulationLogger.Log(name, $"Completed processing request {request.Id} in {serviceTime:F2}s", ConsoleColor.Green);
 
             foreach (var node in _nextNodes)
             {
