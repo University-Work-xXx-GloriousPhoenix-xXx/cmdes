@@ -11,8 +11,8 @@ var dispose = new Dispose(1);
 // Connect nodes
 create.AddNextNode(process1);
 process1.AddNextNode(process2);
-process1.AddNextNode(process3);
-process2.AddNextNode(dispose);
+process2.AddNextNode(process3);
+process3.AddNextNode(dispose);
 
 // Run the simulation
 var cts = new CancellationTokenSource();

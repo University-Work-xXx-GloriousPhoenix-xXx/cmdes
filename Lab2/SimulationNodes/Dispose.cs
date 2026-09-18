@@ -1,9 +1,8 @@
 ﻿using System.Collections.Concurrent;
-using Lab2.Logging;
 
 namespace Lab2.SimulationNodes;
 
-public class Dispose(double serviceTime) : IDisposeNode
+public class Dispose(double serviceTime) : IReceiverNode
 {
     private readonly ConcurrentQueue<Request> _requestQueue = [];
 
