@@ -1,4 +1,5 @@
-﻿using Lab2.SimulationNodes;
+﻿using Lab2.Logging;
+using Lab2.SimulationNodes;
 
 // Nodes declaration
 var create = new Create();
@@ -21,7 +22,9 @@ var simulationTasks = new[]
     Task.Run(() => process1.RunAsync(cts.Token), cts.Token),
     Task.Run(() => process2.RunAsync(cts.Token), cts.Token),
     Task.Run(() => process3.RunAsync(cts.Token), cts.Token),
-    Task.Run(() => dispose.RunAsync(cts.Token), cts.Token)
+    Task.Run(() => dispose.RunAsync(cts.Token), cts.Token),
+
+    Task.Run(() => LoadLogger.StartPeriodicReporter([process1, process2, process3], TimeSpan.FromSeconds(10), cts.Token))
 };
 
 Console.WriteLine("Simulation is running. Press Enter to stop...");
@@ -38,3 +41,4 @@ catch (OperationCanceledException)
 }
 
 Console.WriteLine("Simulation successfully stopped.");
+

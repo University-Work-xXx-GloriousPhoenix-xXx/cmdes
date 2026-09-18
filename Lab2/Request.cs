@@ -7,7 +7,6 @@ public class Request : IDisposable
 
     public void Dispose()
     {
-        Console.WriteLine($"[DISPOSE] Request {Id} left the system.");
         GC.SuppressFinalize(this);
     }
 }

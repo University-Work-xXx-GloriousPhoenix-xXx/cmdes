@@ -5,26 +5,16 @@ namespace Lab2.SimulationNodes;
 
 public class Create(IDistributionStrategy distribution) : IGeneratorNode
 {
-    public Create(double delay) : this(new DefinedDistribution(delay))
-    {
-    }
+    public Create(double delay) : this(new DefinedDistribution(delay)) { }
 
-    public Create() : this(1)
-    {
-    }
+    public Create() : this(1) { }
 
     private IDistributionStrategy _distribution = distribution;
     private readonly List<IReceiverNode> _nextNodes = [];
 
-    public void AddNextNode(IReceiverNode node)
-    {
-        _nextNodes.Add(node);
-    }
+    public void AddNextNode(IReceiverNode node) => _nextNodes.Add(node);
 
-    public void SetDistribution(IDistributionStrategy distribution)
-    {
-        _distribution = distribution;
-    }
+    public void SetDistribution(IDistributionStrategy distribution) => _distribution = distribution;
 
     public async Task RunAsync(CancellationToken ct = default)
     {

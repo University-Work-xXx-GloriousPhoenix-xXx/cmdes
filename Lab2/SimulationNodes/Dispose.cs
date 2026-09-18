@@ -7,10 +7,7 @@ public class Dispose(double serviceTime) : IDisposeNode
 {
     private readonly ConcurrentQueue<Request> _requestQueue = [];
 
-    public void ProcessRequest(Request request)
-    {
-        _requestQueue.Enqueue(request);
-    }
+    public void ProcessRequest(Request request) => _requestQueue.Enqueue(request);
 
     public async Task RunAsync(CancellationToken ct = default)
     {
