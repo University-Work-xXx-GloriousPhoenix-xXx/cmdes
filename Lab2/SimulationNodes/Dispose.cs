@@ -25,7 +25,6 @@ public class Dispose(double serviceTime) : IDisposeNode
                 continue;
             }
 
-            SimulationLogger.Log("DISPOSE", $"Disposing request {request.Id}", ConsoleColor.Magenta);
             await Task.Delay(TimeSpan.FromSeconds(serviceTime), ct);
 
             request.Dispose();

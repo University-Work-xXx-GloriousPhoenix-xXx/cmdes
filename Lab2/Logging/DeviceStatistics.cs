@@ -2,7 +2,7 @@
 
 namespace Lab2.Logging;
 
-public class DeviceStatistics
+public class DeviceStatistics(int channelsCount)
 {
     private readonly Stopwatch _uptimeStopwatch = Stopwatch.StartNew();
     private double _totalBusyTimeSeconds;
@@ -23,7 +23,11 @@ public class DeviceStatistics
         lock (_lock)
         {
             var totalTime = _uptimeStopwatch.Elapsed.TotalSeconds;
-            var utilization = totalTime > 0 ? Math.Min(1.0, _totalBusyTimeSeconds / totalTime) : 0;
+            var maxPossibleWorkTime = totalTime * channelsCount;
+            var utilization = maxPossibleWorkTime > 0
+                ? Math.Min(1.0, _totalBusyTimeSeconds / maxPossibleWorkTime)
+                : 0;
+
             return (utilization, _processedCount, totalTime);
         }
     }

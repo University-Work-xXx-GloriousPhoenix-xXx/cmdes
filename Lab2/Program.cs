@@ -2,10 +2,10 @@
 using Lab2.SimulationNodes;
 
 // Nodes declaration
-var create = new Create();
-var process1 = new Process(2, "Process 1");
-var process2 = new Process(3, "Process 2");
-var process3 = new Process(4, "Process 3");
+var create = new Create(0.5);
+var process1 = new Process(4, "Process 1", 8);
+var process2 = new Process(3, "Process 2", 6);
+var process3 = new Process(2, "Process 3",4);
 var dispose = new Dispose(1);
 
 // Connect nodes
@@ -24,7 +24,7 @@ var simulationTasks = new[]
     Task.Run(() => process3.RunAsync(cts.Token), cts.Token),
     Task.Run(() => dispose.RunAsync(cts.Token), cts.Token),
 
-    Task.Run(() => LoadLogger.StartPeriodicReporter([process1, process2, process3], TimeSpan.FromSeconds(10), cts.Token))
+    Task.Run(() => HealthLogger.RunDashboardAsync([process1, process2, process3], create, cts.Token)), 
 };
 
 Console.WriteLine("Simulation is running. Press Enter to stop...");

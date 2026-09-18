@@ -24,8 +24,6 @@ public class Create(IDistributionStrategy distribution) : IGeneratorNode
             await Task.Delay(TimeSpan.FromSeconds(delay), ct);
             var request = new Request();
 
-            SimulationLogger.Log("CREATE", $"Created request {request.Id}", ConsoleColor.Cyan);
-
             foreach (var node in _nextNodes)
             {
                 node.ProcessRequest(request);
