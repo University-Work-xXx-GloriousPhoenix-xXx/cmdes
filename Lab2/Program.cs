@@ -1,17 +1,28 @@
-﻿using Lab2.Logging;
+﻿using Lab2.Distributions;
+using Lab2.Logging;
 using Lab2.SimulationNodes;
+using Lab2.SimulationUtils;
 
 // Nodes declaration
-var create = new Create(0.5);
-var process1 = new Process(4, "Process 1", 8);
-var process2 = new Process(3, "Process 2", 6);
-var process3 = new Process(2, "Process 3",4);
-var dispose = new Dispose(1);
+var create = new Create(0.2);
+var process1 = new Process(new ExponentialDistribution(1.2), "Process 1", 5, 10);
+var process2 = new Process(new ExponentialDistribution(2), "Process 2", 7, 8);
+var process3 = new Process(new ExponentialDistribution(1), "Process 3", 2, 1);
+var dispose = new Dispose(0.1);
 
 // Connect nodes
 create.AddNextNode(process1);
-process1.AddNextNode(process2);
-process2.AddNextNode(process3);
+
+var process1Map = new NextNodeMap();
+process1Map.AddRoute(process2, 0.7);
+process1Map.AddRoute(dispose, 0.3);
+process1.SetNodeMap(process1Map);
+
+var process2Map = new NextNodeMap();
+process2Map.AddRoute(process3, 0.7);
+process2Map.AddRoute(dispose, 0.3);
+process2.SetNodeMap(process2Map);
+
 process3.AddNextNode(dispose);
 
 // Run the simulation

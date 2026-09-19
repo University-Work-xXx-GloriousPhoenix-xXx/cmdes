@@ -1,35 +1,43 @@
 ﻿using Lab2.Distributions;
 using Lab2.Logging;
-using System.Collections.Concurrent;
 using Lab2.SimulationUtils;
+using System.Collections.Concurrent;
 
 namespace Lab2.SimulationNodes;
 
-public class Process(IDistributionStrategy distribution, string name, int channelsCount)
+public class Process(IDistributionStrategy distribution, string name, int channelsCount, int queueLimit)
     : ParametrizedNode(distribution), IReceiverNode
 {
-    public Process(double delay, string name, int channelsCount) : this(new DefinedDistribution(delay), name,
-        channelsCount)
-    {
-    }
+    public Process(double delay, string name, int channelsCount, int queueLimit)
+        : this(new DefinedDistribution(delay), name, channelsCount, queueLimit) { }
 
-    public Process(double delay, string name) : this(delay, name, 1)
-    {
-    }
+    public Process(double delay, string name, int queueLimit)
+        : this(delay, name, 1, queueLimit) { }
 
-    public Process(string name) : this(1, name)
-    {
-    }
+    public Process(string name, int queueLimit)
+        : this(1, name, 1, queueLimit) { }
 
     public string Name { get; } = name;
 
-    private readonly NextNodeMap _nodeMap = new();
     private readonly ConcurrentQueue<Request> _requestQueue = [];
+
+    private long _rejectedCount;
+    public long RejectedCount => _rejectedCount;
 
     public DeviceStatistics Statistics { get; } = new(channelsCount);
     public int QueueLength => _requestQueue.Count;
 
-    public void ProcessRequest(Request request) => _requestQueue.Enqueue(request);
+    public void ProcessRequest(Request request)
+    {
+        if (_requestQueue.Count >= queueLimit)
+        {
+            Interlocked.Increment(ref _rejectedCount);
+            request.Dispose();
+            return;
+        }
+
+        _requestQueue.Enqueue(request);
+    }
 
     public override async Task RunAsync(CancellationToken ct = default)
     {

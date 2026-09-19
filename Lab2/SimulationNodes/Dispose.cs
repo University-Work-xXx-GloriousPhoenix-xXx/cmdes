@@ -1,4 +1,5 @@
-﻿using System.Collections.Concurrent;
+﻿using Lab2.SimulationUtils;
+using System.Collections.Concurrent;
 
 namespace Lab2.SimulationNodes;
 

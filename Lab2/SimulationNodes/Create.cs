@@ -1,4 +1,5 @@
 ﻿using Lab2.Distributions;
+using Lab2.SimulationUtils;
 
 namespace Lab2.SimulationNodes;
 

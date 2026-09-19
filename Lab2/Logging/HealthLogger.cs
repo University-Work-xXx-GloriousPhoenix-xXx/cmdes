@@ -24,22 +24,22 @@ public static class HealthLogger
 
                 var uptime = stopwatch.Elapsed;
 
-                Console.WriteLine("==================================================================");
-                Console.WriteLine("                  SYSTEM HEALTH & METRICS DASHBOARD               ");
-                Console.WriteLine("==================================================================");
-                Console.WriteLine(@$" Status: Running | Uptime: {uptime:hh\:mm\:ss}                           ");
-                Console.WriteLine("------------------------------------------------------------------");
-                Console.WriteLine($" {"Node / Channel",-22} | {" Load",-6} | {"Queue",-8} | {"Processed",-10}");
-                Console.WriteLine("------------------------------------------------------------------");
+                Console.WriteLine("==================================================================================");
+                Console.WriteLine("                        SYSTEM HEALTH & METRICS DASHBOARD                         ");
+                Console.WriteLine("==================================================================================");
+                Console.WriteLine(@$" Status: Running | Uptime: {uptime:hh\:mm\:ss}                                     ");
+                Console.WriteLine("----------------------------------------------------------------------------------");
+                Console.WriteLine($" {"Node / Channel",-22} | {"Load",-6} | {"Queue",-8} | {"Processed",-10} | {"Rejected",-10}");
+                Console.WriteLine("----------------------------------------------------------------------------------");
 
                 foreach (var proc in procList)
                 {
                     var (utilization, count, _) = proc.Statistics.GetSnapshot();
-                    Console.WriteLine($" {proc.Name,-22} | {utilization * 100,5:F1}% | {proc.QueueLength,8} | {count,10}");
+                    Console.WriteLine($" {proc.Name,-22} | {utilization * 100,5:F1}% | {proc.QueueLength,8} | {count,10} | {proc.RejectedCount,10}");
                 }
 
-                Console.WriteLine("==================================================================");
-                Console.WriteLine(" Press Enter to stop simulation...                                ");
+                Console.WriteLine("==================================================================================");
+                Console.WriteLine(" Press Enter to stop simulation...                                                ");
             }
         }
         finally
