@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Lab2.Logging;
+namespace Lab2.SimulationUtils;
 
 public class DeviceStatistics(int channelsCount)
 {

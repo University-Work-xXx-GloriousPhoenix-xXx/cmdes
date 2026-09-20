@@ -7,6 +7,10 @@ public class Dispose(double serviceTime) : IReceiverNode
 {
     private readonly ConcurrentQueue<Request> _requestQueue = [];
 
+    public int TotalProcessed { get; private set; } = 0;
+
+    private readonly Lock _incrementLock = new();
+
     public void ProcessRequest(Request request) => _requestQueue.Enqueue(request);
 
     public async Task RunAsync(CancellationToken ct = default)
@@ -26,6 +30,11 @@ public class Dispose(double serviceTime) : IReceiverNode
             }
 
             await Task.Delay(TimeSpan.FromSeconds(serviceTime), ct);
+
+            lock (_incrementLock)
+            {
+                TotalProcessed++;
+            }
 
             request.Dispose();
         }

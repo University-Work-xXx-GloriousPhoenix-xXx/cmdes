@@ -1,5 +1,4 @@
 ﻿using Lab2.Distributions;
-using Lab2.Logging;
 using Lab2.SimulationUtils;
 using System.Collections.Concurrent;
 
@@ -21,6 +20,7 @@ public class Process(IDistributionStrategy distribution, string name, int channe
 
     private readonly ConcurrentQueue<Request> _requestQueue = [];
 
+    private int _busyChannels;
     private long _rejectedCount;
     public long RejectedCount => _rejectedCount;
 
@@ -29,7 +29,10 @@ public class Process(IDistributionStrategy distribution, string name, int channe
 
     public void ProcessRequest(Request request)
     {
-        if (_requestQueue.Count >= queueLimit)
+        var maxCapacity = channelsCount + queueLimit;
+        var currentLoad = _requestQueue.Count + Volatile.Read(ref _busyChannels);
+
+        if (currentLoad >= maxCapacity)
         {
             Interlocked.Increment(ref _rejectedCount);
             request.Dispose();
@@ -66,10 +69,17 @@ public class Process(IDistributionStrategy distribution, string name, int channe
                 continue;
             }
 
-            var serviceTime = Distribution.Generate();
-
-            Statistics.RecordWork(serviceTime);
-            await Task.Delay(TimeSpan.FromSeconds(serviceTime), ct);
+            Interlocked.Increment(ref _busyChannels);
+            try
+            {
+                var serviceTime = Distribution.Generate();
+                Statistics.RecordWork(serviceTime);
+                await Task.Delay(TimeSpan.FromSeconds(serviceTime), ct);
+            }
+            finally
+            {
+                Interlocked.Decrement(ref _busyChannels);
+            }
 
             var next = NodeMap.GetNextNode();
             next.ProcessRequest(request);

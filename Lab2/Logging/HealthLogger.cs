@@ -27,7 +27,7 @@ public static class HealthLogger
                 Console.WriteLine("==================================================================================");
                 Console.WriteLine("                        SYSTEM HEALTH & METRICS DASHBOARD                         ");
                 Console.WriteLine("==================================================================================");
-                Console.WriteLine(@$" Status: Running | Uptime: {uptime:hh\:mm\:ss}                                     ");
+                Console.WriteLine(@$" Status: Running | Uptime: {uptime:hh\:mm\:ss}");
                 Console.WriteLine("----------------------------------------------------------------------------------");
                 Console.WriteLine($" {"Node / Channel",-22} | {"Load",-6} | {"Queue",-8} | {"Processed",-10} | {"Rejected",-10}");
                 Console.WriteLine("----------------------------------------------------------------------------------");
