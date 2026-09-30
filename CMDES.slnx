@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="Lab2/Lab2.csproj" Id="c290ba33-810c-4283-bc94-29e63a47c9e6" />
+  <Project Path="Lab2DES/Lab2DES.csproj" Id="3819cd29-6837-434d-85f4-22ff58dcab16" />
 </Solution>
