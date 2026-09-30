@@ -2,45 +2,62 @@
 
 public class Process() : Element()
 {
-    public int QueueLength { get; private set; } = 0;
-    public int MaxQueue { get; set; } = int.MaxValue;
-    public int Failure { get; set; } = 0;
+    public int MaxChannels { get; set; } = 1;
+    public int CurrChannels => _channelQueue.Count;
+    private readonly PriorityQueue<double, double> _channelQueue = new();
+
+    public int MaxQueue { get; set; } = 0;
+    public int CurrQueue { get; private set; } = 0;
+    public int Failure { get; private set; } = 0;
     public double MeanQueue { get; set; } = 0.0;
-    public int State { get; private set; } = 0;
+    public double MeanLoadTime { get; set; } = 0.0;
 
     public override void InAct()
     {
-        if (State == 0)
+        if (CurrChannels < MaxChannels)
         {
-            State = 1;
-            TNext = TCurr + GetDelay();
+            var departureTime = TCurr + GetDelay();
+            _channelQueue.Enqueue(departureTime, departureTime);
+            UpdateTNext();
+        }
+        else if (CurrQueue < MaxQueue)
+        {
+            CurrQueue++;
         }
         else
         {
-            if (QueueLength < MaxQueue)
-            {
-                QueueLength++;
-            }
-            else
-            {
-                Failure++;
-            }
+            Failure++;
         }
     }
 
     public override void OutAct()
     {
         base.OutAct();
-        TNext = double.MaxValue;
-        State = 0;
-
-        if (QueueLength > 0)
+        if (CurrChannels > 0)
         {
-            QueueLength--;
-            State = 1;
-            TNext = TCurr + GetDelay();
+            _channelQueue.Dequeue();
         }
 
+        if (CurrQueue > 0)
+        {
+            CurrQueue--;
+            var departureTime = TCurr + GetDelay();
+            _channelQueue.Enqueue(departureTime, departureTime);
+        }
+
+        UpdateTNext();
         NextElement?.InAct();
+    }
+
+    private void UpdateTNext()
+    {
+        if (_channelQueue.TryPeek(out double nextTime, out _))
+        {
+            TNext = nextTime;
+        }
+        else
+        {
+            TNext = double.MaxValue;
+        }
     }
 }
