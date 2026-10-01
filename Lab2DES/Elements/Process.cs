@@ -54,18 +54,13 @@ public class Process() : SourceElement, IDestinationElement
 
         UpdateTNext();
 
-        RouteMap.TryRoute();
+        NextElement?.InAct();
     }
 
     private void UpdateTNext()
     {
-        if (_channelQueue.TryPeek(out double nextTime, out _))
-        {
-            TNext = nextTime;
-        }
-        else
-        {
-            TNext = double.MaxValue;
-        }
+TNext = _channelQueue.TryPeek(out var nextTime, out _)
+    ? nextTime
+    : double.MaxValue;
     }
 }
