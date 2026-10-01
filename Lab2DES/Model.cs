@@ -24,7 +24,7 @@ public class Model(IList<Element> elements)
                 element.TCurr = TCurr;
             }
 
-            foreach (var el in Elements)
+            foreach (var el in Elements.OfType<SourceElement>())
             {
                 if (Math.Abs(el.TNext - TNext) < Epsilon)
                 {

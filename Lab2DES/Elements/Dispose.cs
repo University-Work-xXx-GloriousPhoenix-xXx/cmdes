@@ -1,7 +1,10 @@
 ﻿namespace Lab2DES.Elements;
 
-public class Dispose() : Element()
+public class Dispose() : Element(), IDestinationElement
 {
-    public override void InAct() => Quantity++;
-    public override void OutAct() { }
+    public bool InAct()
+    {
+        Quantity++;
+        return true;
+    }
 }

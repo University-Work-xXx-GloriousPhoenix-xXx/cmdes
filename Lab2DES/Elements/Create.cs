@@ -1,6 +1,6 @@
 ﻿namespace Lab2DES.Elements;
 
-public class Create : Element
+public class Create : SourceElement
 {
     public Create() : base()
     {
@@ -9,8 +9,13 @@ public class Create : Element
 
     public override void OutAct()
     {
-        base.OutAct();
+        Quantity++;
         TNext = TCurr + GetDelay();
-        NextElement?.InAct();
+
+        var success = RouteMap.TryRoute();
+        if (!success)
+        {
+            Failure++;
+        }
     }
 }
