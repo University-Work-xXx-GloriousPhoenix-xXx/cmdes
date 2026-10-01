@@ -1,5 +1,4 @@
-﻿using Lab2DES;
-using Lab2DES.Elements;
+﻿using Lab2DES.Elements;
 
 namespace Lab2DES;
 
@@ -24,18 +23,12 @@ public static class StatisticsHandler
             {
                 var meanLength = model.TCurr > 0 ? p.MeanQueue / model.TCurr : 0.0;
 
-                var failureProb = p.Quantity > 0 ? (double)p.Failure / p.Quantity : 0.0;
+                var failureProb = p.IncomingAttempts > 0 ? (double)p.Failure / p.IncomingAttempts : 0.0;
 
                 var maxPossibleLoadTime = model.TCurr * p.MaxChannels;
                 var meanLoad = maxPossibleLoadTime > 0 ? (p.MeanLoadTime / maxPossibleLoadTime) * 100 : 0.0;
 
                 Console.WriteLine($"{name} | {quantity} | {meanLength,-13:F4} | {failureProb,-13:F4} | {meanLoad,-6:F2}%");
-            }
-            else if (el is Create c)
-            {
-                var failureProb = c.Quantity > 0 ? (double)c.Failure / c.Quantity : 0.0;
-
-                Console.WriteLine($"{name} | {quantity} | {"-",-13} | {failureProb,-13:F4} | {"-",-11}");
             }
             else
             {

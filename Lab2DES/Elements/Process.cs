@@ -10,9 +10,14 @@ public class Process() : SourceElement, IDestinationElement
     public int CurrQueue { get; private set; } = 0;
     public double MeanQueue { get; set; } = 0.0;
     public double MeanLoadTime { get; set; } = 0.0;
+    public int Failure { get; private set; } = 0;
+    public int IncomingAttempts { get; private set; } = 0;
+
 
     public bool InAct()
     {
+        IncomingAttempts++;
+
         if (CurrChannels < MaxChannels)
         {
             var departureTime = TCurr + GetDelay();
@@ -27,6 +32,7 @@ public class Process() : SourceElement, IDestinationElement
         }
         else
         {
+            Failure++;
             return false;
         }
     }
@@ -48,11 +54,7 @@ public class Process() : SourceElement, IDestinationElement
 
         UpdateTNext();
 
-        var success = RouteMap.TryRoute();
-        if (!success)
-        {
-            Failure++;
-        }
+        RouteMap.TryRoute();
     }
 
     private void UpdateTNext()

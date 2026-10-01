@@ -3,11 +3,10 @@ using Lab2DES.Routing;
 
 namespace Lab2DES.Elements;
 
-public abstract class SourceElement : Element, ISourceElement
+public abstract class SourceElement : Element
 {
     public IDistributionStrategy Distribution { get; set; } = new ExponentialDistribution(1);
     public RouteMap RouteMap { get; set; } = new();
-    public int Failure { get; protected set; } = 0;
     public abstract void OutAct();
     protected double GetDelay() => Distribution.Generate();
 

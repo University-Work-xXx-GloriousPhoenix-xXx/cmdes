@@ -52,13 +52,7 @@ public class RouteMap
 
         foreach (var group in priorityGroups)
         {
-            var candidates = group.ToList();
-
-            var sortedCandidates = candidates
-                .OrderByDescending(c => c.Probability)
-                .ToList();
-
-            foreach (var route in sortedCandidates)
+            foreach (var route in group)
             {
                 if (route.Destination.InAct())
                 {

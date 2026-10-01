@@ -11,11 +11,6 @@ public class Create : SourceElement
     {
         Quantity++;
         TNext = TCurr + GetDelay();
-
-        var success = RouteMap.TryRoute();
-        if (!success)
-        {
-            Failure++;
-        }
+        RouteMap.TryRoute();
     }
 }
