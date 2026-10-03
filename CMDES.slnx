@@ -1,5 +1,5 @@
 <Solution>
   <Project Path="Core/Core.csproj" Id="6f05a756-144a-4a02-94af-9a29cbc973fa" />
-  <Project Path="Lab2DES/Lab2DES.csproj" Id="3819cd29-6837-434d-85f4-22ff58dcab16" />
+  <Project Path="Lab2/Lab2.csproj" Id="3819cd29-6837-434d-85f4-22ff58dcab16" />
   <Project Path="Lab3/Lab3.csproj" Id="e4c19faa-010e-42af-a36c-e0dc705d3f75" />
 </Solution>
