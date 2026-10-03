@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel;
-using Lab2DES;
-using Lab2DES.Distributions;
-using Lab2DES.Elements;
+using Core;
+using Core.Distributions;
+using Core.Elements.Basic;
+using Core.Elements.Functional;
 using Lab3.Bank;
 using Lab3.Hospital;
 
@@ -50,9 +51,14 @@ public static class SimulationHandler
         p1.NextElement = d;
         p2.NextElement = d;
 
-        var model = new BankModel<int>([c, p1, p2, bp, d], bp);
+        var model = new Model<int>([c, p1, p2, bp, d])
+        {
+            OnCustomStep = bp.Calculate
+        };
+
         model.Simulate(time);
-        BankStatisticsHandler<int>.ShowBankReport(model, bp);
+
+        BankStatisticsLogger<int>.ShowBankReport(model, bp);
     }
 
     public static void SimulateHospital(double time)
@@ -134,13 +140,13 @@ public static class SimulationHandler
             Name = "Exit"
         };
 
-        var reclassifier = new StateModifier<Patient>
+        var reclassifier = new Assign<Patient>
         {
             Name = "Type2To1",
             ModifyAction = (patient) => patient.Type = PatientType.Type1
         };
 
-        var labArrivalTracker = new StateModifier<Patient>
+        var labArrivalTracker = new Assign<Patient>
         {
             Name = "LabArrivalTracker",
         };
@@ -149,7 +155,7 @@ public static class SimulationHandler
             HospitalTracker.RecordLabArrival(labArrivalTracker.TCurr);
         };
 
-        var wardTracker = new StateModifier<Patient>
+        var wardTracker = new Assign<Patient>
         {
             Name = "WardTracker",
         };
@@ -158,7 +164,7 @@ public static class SimulationHandler
             HospitalTracker.RecordPatientFinish(patient, wardTracker.TCurr);
         };
 
-        var labExitType3Tracker = new StateModifier<Patient>
+        var labExitType3Tracker = new Assign<Patient>
         {
             Name = "LabExitType3Tracker",
         };
@@ -167,7 +173,7 @@ public static class SimulationHandler
             HospitalTracker.RecordPatientFinish(patient, labExitType3Tracker.TCurr);
         };
 
-        var creationTracker = new StateModifier<Patient>
+        var creationTracker = new Assign<Patient>
         {
             Name = "CreationTracker"
         };

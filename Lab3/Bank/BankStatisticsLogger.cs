@@ -1,8 +1,10 @@
-﻿namespace Lab3.Bank;
+﻿using Core;
 
-public static class BankStatisticsHandler<TRequest>
+namespace Lab3.Bank;
+
+public static class BankStatisticsLogger<TRequest>
 {
-    public static void ShowBankReport(BankModel<TRequest> model, BankProcess<TRequest> bank)
+    public static void ShowBankReport(Model<TRequest> model, BankProcess<TRequest> bank)
     {
         var tCurr = model.TCurr;
         if (tCurr <= 0) return;
