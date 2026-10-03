@@ -1,6 +1,4 @@
-﻿using Lab2DES.Routing;
-
-namespace Lab2DES.Elements;
+﻿namespace Lab2DES.Elements;
 
 public abstract class Element
 {

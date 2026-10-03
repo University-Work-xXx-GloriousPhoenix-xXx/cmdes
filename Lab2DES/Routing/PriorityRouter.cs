@@ -2,13 +2,13 @@
 
 namespace Lab2DES.Routing;
 
-public class PriorityRouter : Router
+public class PriorityRouter<TRequest> : Router<TRequest>
 {
     public PriorityRouter() { }
-    public PriorityRouter(IEnumerable<Route> routes) => SetRoutes(routes);
-    public List<Route> Routes { get; private set; } = [];
+    public PriorityRouter(IEnumerable<Route<TRequest>> routes) => SetRoutes(routes);
+    public List<Route<TRequest>> Routes { get; private set; } = [];
 
-    public PriorityRouter AddRoute(Route route)
+    public PriorityRouter<TRequest> AddRoute(Route<TRequest> route)
     {
         var groupSum = Routes.Where(r => r.Priority == route.Priority).Sum(r => r.Probability);
         if (groupSum + route.Probability - 1 > 1e-9)
@@ -20,10 +20,10 @@ public class PriorityRouter : Router
         return this;
     }
 
-    public PriorityRouter AddRoute(IDestinationElement destination, RoutePriority priority, double probability) =>
-        AddRoute(new Route(destination, priority, probability));
+    public PriorityRouter<TRequest> AddRoute(IDestinationElement<TRequest> destination, RoutePriority priority, double probability) =>
+        AddRoute(new Route<TRequest>(destination, priority, probability));
 
-    public PriorityRouter SetRoutes(IEnumerable<Route> routes)
+    public PriorityRouter<TRequest> SetRoutes(IEnumerable<Route<TRequest>> routes)
     {
         var list = routes.ToList();
         foreach (var group in list.GroupBy(r => r.Priority))
@@ -37,20 +37,20 @@ public class PriorityRouter : Router
         return this;
     }
 
-    public PriorityRouter SetRoutes(Route route)
+    public PriorityRouter<TRequest> SetRoutes(Route<TRequest> route)
     {
         ArgumentOutOfRangeException.ThrowIfNotEqual(route.Probability, 1);
         Routes = [route];
         return this;
     }
 
-    public PriorityRouter SetRoutes(IDestinationElement destination, RoutePriority priority, double probability) =>
-        SetRoutes(new Route(destination, priority, probability));
+    public PriorityRouter<TRequest> SetRoutes(IDestinationElement<TRequest> destination, RoutePriority priority, double probability) =>
+        SetRoutes(new Route<TRequest>(destination, priority, probability));
 
-    public PriorityRouter SetRoutes(IDestinationElement destination) =>
+    public PriorityRouter<TRequest> SetRoutes(IDestinationElement<TRequest> destination) =>
         SetRoutes(destination, RoutePriority.Medium, 1);
 
-    public override bool InAct()
+    public override bool InAct(TRequest request)
     {
         if (Routes.Count == 0) return false;
 
@@ -58,6 +58,6 @@ public class PriorityRouter : Router
             .GroupBy(r => r.Priority)
             .OrderByDescending(g => g.Key)
             .SelectMany(group => group)
-            .Any(route => route.Destination.InAct());
+            .Any(route => route.Destination.InAct(request));
     }
 }

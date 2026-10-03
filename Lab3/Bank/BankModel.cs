@@ -1,16 +1,16 @@
 ﻿using Lab2DES;
 using Lab2DES.Elements;
 
-namespace Lab3;
+namespace Lab3.Bank;
 
-public class BankModel(IList<Element> elements, BankProcess bank)
+public class BankModel<TRequest>(IList<Element> elements, BankProcess<TRequest> bank)
 {
     public IList<Element> Elements { get; init; } = elements;
-    public BankProcess Bank { get; init; } = bank;
+    public BankProcess<TRequest> Bank { get; init; } = bank;
     public double TCurr { get; private set; } = 0.0;
     private const double Epsilon = 1e-9;
 
-    public BankModel Simulate(double time)
+    public BankModel<TRequest> Simulate(double time)
     {
         while (TCurr < time)
         {
@@ -22,7 +22,10 @@ public class BankModel(IList<Element> elements, BankProcess bank)
                 if (finalDelta > 0)
                 {
                     Bank.Calculate(finalDelta);
-                    foreach (var p in Elements.OfType<Process>()) p.Calculate(finalDelta);
+                    foreach (var p in Elements.OfType<Process<TRequest>>())
+                    {
+                        StatisticsHandler<TRequest>.Calculate(p, finalDelta);
+                    }
                 }
                 TCurr = time;
                 break;
@@ -33,9 +36,9 @@ public class BankModel(IList<Element> elements, BankProcess bank)
             if (delta > 0)
             {
                 Bank.Calculate(delta);
-                foreach (var p in Elements.OfType<Process>())
+                foreach (var p in Elements.OfType<Process<TRequest>>())
                 {
-                    p.Calculate(delta);
+                    StatisticsHandler<TRequest>.Calculate(p, delta);
                 }
             }
 
@@ -50,11 +53,11 @@ public class BankModel(IList<Element> elements, BankProcess bank)
                 if (Math.Abs(el.TNext - TCurr) > Epsilon)
                     continue;
 
-                if (el is SourceElement sourceEl)
+                if (el is SourceElement<TRequest> sourceEl)
                 {
                     sourceEl.OutAct();
                 }
-                else if (el is Process proc)
+                else if (el is Process<TRequest> proc)
                 {
                     proc.OutAct();
                 }

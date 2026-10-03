@@ -1,8 +1,8 @@
-﻿namespace Lab3;
+﻿namespace Lab3.Bank;
 
-public static class BankStatisticsHandler
+public static class BankStatisticsHandler<TRequest>
 {
-    public static void ShowBankReport(this BankModel model, BankProcess bank)
+    public static void ShowBankReport(BankModel<TRequest> model, BankProcess<TRequest> bank)
     {
         var tCurr = model.TCurr;
         if (tCurr <= 0) return;

@@ -2,9 +2,9 @@
 
 namespace Lab2DES;
 
-public static class StatisticsHandler
+public static class StatisticsHandler<TRequest>
 {
-    public static void Show(this Model model)
+    public static void Show(Model<TRequest> model)
     {
         if (model.Elements == null || !model.Elements.Any()) return;
 
@@ -19,7 +19,7 @@ public static class StatisticsHandler
             var name = el.Name.PadRight(maxNameLength);
             var quantity = el.Quantity.ToString().PadRight(10);
 
-            if (el is Process p)
+            if (el is Process<TRequest> p)
             {
                 var meanLength = model.TCurr > 0 ? p.MeanQueue / model.TCurr : 0.0;
 
@@ -37,7 +37,7 @@ public static class StatisticsHandler
         }
     }
 
-    public static void Calculate(this Process process, double delta)
+    public static void Calculate(Process<TRequest> process, double delta)
     {
         process.MeanQueue += process.CurrQueue * delta;
         process.MeanLoadTime += process.CurrChannels * delta;

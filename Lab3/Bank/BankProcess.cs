@@ -1,11 +1,11 @@
 ﻿using Lab2DES.Elements;
 
-namespace Lab3;
+namespace Lab3.Bank;
 
-public class BankProcess(Process laneA, Process laneB) : Element, IDestinationElement
+public class BankProcess<TRequest>(Process<TRequest> laneA, Process<TRequest> laneB) : Element, IDestinationElement<TRequest>
 {
-    public Process LaneA { get; } = laneA;
-    public Process LaneB { get; } = laneB;
+    public Process<TRequest> LaneA { get; } = laneA;
+    public Process<TRequest> LaneB { get; } = laneB;
 
     public int IncomingAttempts { get; private set; } = 0;
     public int Failure { get; private set; } = 0;
@@ -16,7 +16,7 @@ public class BankProcess(Process laneA, Process laneB) : Element, IDestinationEl
     public int TotalDepartures => LaneA.Quantity + LaneB.Quantity;
     public int TotalClients => LaneA.CurrChannels + LaneA.CurrQueue + LaneB.CurrChannels + LaneB.CurrQueue;
 
-    public bool InAct()
+    public bool InAct(TRequest request)
     {
         IncomingAttempts++;
 
@@ -26,19 +26,10 @@ public class BankProcess(Process laneA, Process laneB) : Element, IDestinationEl
             return false;
         }
 
-        int loadA = LaneA.CurrChannels + LaneA.CurrQueue;
-        int loadB = LaneB.CurrChannels + LaneB.CurrQueue;
+        var loadA = LaneA.CurrChannels + LaneA.CurrQueue;
+        var loadB = LaneB.CurrChannels + LaneB.CurrQueue;
 
-        bool accepted;
-        if (loadA <= loadB)
-        {
-            accepted = LaneA.InAct();
-        }
-        else
-        {
-            accepted = LaneB.InAct();
-        }
-
+        var accepted = loadA <= loadB ? LaneA.InAct(request) : LaneB.InAct(request);
         if (!accepted)
         {
             Failure++;
@@ -55,11 +46,7 @@ public class BankProcess(Process laneA, Process laneB) : Element, IDestinationEl
 
     private void CheckJockeying()
     {
-        if (LaneA.CurrQueue - LaneB.CurrQueue >= 2)
-        {
-            SwitchCount++;
-        }
-        else if (LaneB.CurrQueue - LaneA.CurrQueue >= 2)
+        if (Math.Abs(LaneA.CurrQueue - LaneB.CurrQueue) >= 2)
         {
             SwitchCount++;
         }
