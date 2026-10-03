@@ -1,8 +1,9 @@
 ﻿namespace Lab2DES.Elements;
 
-public class Create : SourceElement
+public class Create<TRequest> : SourceElement<TRequest>
 {
-    public Create() : base()
+    public required Func<TRequest> RequestFactory { get; set; }
+    public Create()
     {
         TNext = 0.0;
     }
@@ -11,6 +12,8 @@ public class Create : SourceElement
     {
         Quantity++;
         TNext = TCurr + GetDelay();
-        NextElement?.InAct();
+
+        var request = RequestFactory();
+        NextElement?.InAct(request);
     }
 }

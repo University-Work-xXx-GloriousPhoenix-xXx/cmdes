@@ -1,5 +1,5 @@
 ﻿namespace Lab2DES.Elements;
-public interface IDestinationElement
+public interface IDestinationElement<in TRequest>
 {
-    bool InAct();
+    bool InAct(TRequest request);
 }

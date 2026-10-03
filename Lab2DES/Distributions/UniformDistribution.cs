@@ -2,16 +2,9 @@
 
 public class UniformDistribution(double timeMin, double timeMax) : IDistributionStrategy
 {
-    private static readonly Random _random = new();
+    private static readonly Random Random = new();
     public double Generate()
     {
-        var a = 0.0;
-        while (a == 0)
-        {
-            a = _random.NextDouble();
-        }
-
-        a = timeMin + a * (timeMax - timeMin);
-        return a;
+        return timeMin + Random.NextDouble() * (timeMax - timeMin);
     }
 }

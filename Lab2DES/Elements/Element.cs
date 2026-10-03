@@ -1,12 +1,10 @@
-﻿using Lab2DES.Routing;
-
-namespace Lab2DES.Elements;
+﻿namespace Lab2DES.Elements;
 
 public abstract class Element
 {
     public Guid Id { get; set; } = Guid.NewGuid();
     public string Name { get; set; } = nameof(Element);
     public double TCurr { get; set; } = 0.0;
-    public double TNext { get; protected set; } = double.MaxValue;
+    public double TNext { get; set; } = double.MaxValue;
     public int Quantity { get; protected set; } = 0;
 }

@@ -2,10 +2,10 @@
 
 namespace Lab2DES.Elements;
 
-public abstract class SourceElement : Element
+public abstract class SourceElement<TRequest> : Element
 {
     public IDistributionStrategy Distribution { get; set; } = new ExponentialDistribution(1);
     public abstract void OutAct();
     protected double GetDelay() => Distribution.Generate();
-    public IDestinationElement? NextElement { get; set; } = null;
+    public IDestinationElement<TRequest>? NextElement { get; set; } = null;
 }

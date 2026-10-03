@@ -1,66 +1,91 @@
 ﻿namespace Lab2DES.Elements;
 
-public class Process() : SourceElement, IDestinationElement
+public class Process<TRequest> : SourceElement<TRequest>, IDestinationElement<TRequest>
 {
     public int MaxChannels { get; set; } = 1;
     public int CurrChannels => _channelQueue.Count;
-    private readonly PriorityQueue<double, double> _channelQueue = new();
+    private readonly PriorityQueue<TRequest, double> _channelQueue = new();
 
-    public int MaxQueue { get; set; } = 0;
-    public int CurrQueue { get; private set; } = 0;
+    public int MaxQueue { get; set; } = int.MaxValue;
+    private readonly Queue<TRequest> _waitingQueue = new();
+    public int CurrQueue => _waitingQueue.Count;
+
+    public Func<TRequest, double>? ServiceTimeCalculator { get; set; }
+
     public double MeanQueue { get; set; } = 0.0;
     public double MeanLoadTime { get; set; } = 0.0;
     public int Failure { get; private set; } = 0;
     public int IncomingAttempts { get; private set; } = 0;
 
 
-    public bool InAct()
+    public bool InAct(TRequest request)
     {
         IncomingAttempts++;
 
         if (CurrChannels < MaxChannels)
         {
-            var departureTime = TCurr + GetDelay();
-            _channelQueue.Enqueue(departureTime, departureTime);
+            var serviceTime = ServiceTimeCalculator?.Invoke(request) ?? GetDelay();
+
+            var departureTime = TCurr + serviceTime;
+            _channelQueue.Enqueue(request, departureTime);
             UpdateTNext();
             return true;
         }
-        else if (CurrQueue < MaxQueue)
+
+        if (CurrQueue < MaxQueue)
         {
-            CurrQueue++;
+            _waitingQueue.Enqueue(request);
             return true;
         }
-        else
-        {
-            Failure++;
-            return false;
-        }
+
+        Failure++;
+        return false;
     }
 
     public override void OutAct()
     {
         Quantity++;
-        if (CurrChannels > 0)
+        TRequest? departingRequest = default;
+        if (_channelQueue.TryDequeue(out var req, out _))
         {
-            _channelQueue.Dequeue();
+            departingRequest = req;
         }
 
-        if (CurrQueue > 0)
+        if (_waitingQueue.Count > 0)
         {
-            CurrQueue--;
-            var departureTime = TCurr + GetDelay();
-            _channelQueue.Enqueue(departureTime, departureTime);
+            var nextRequest = _waitingQueue.Dequeue();
+            var serviceTime = ServiceTimeCalculator?.Invoke(nextRequest) ?? GetDelay();
+
+            var departureTime = TCurr + serviceTime;
+            _channelQueue.Enqueue(nextRequest, departureTime);
         }
 
         UpdateTNext();
 
-        NextElement?.InAct();
+        if (departingRequest != null)
+        {
+            NextElement?.InAct(departingRequest);
+        }
     }
 
     private void UpdateTNext()
     {
-TNext = _channelQueue.TryPeek(out var nextTime, out _)
-    ? nextTime
-    : double.MaxValue;
+        TNext = _channelQueue.TryPeek(out _, out var nextTime)
+            ? nextTime
+            : double.MaxValue;
+    }
+
+    public void ForceInitialize(int initialQueueCount, TRequest initialRequest, double initialDepartureTime)
+    {
+        _waitingQueue.Clear();
+        _channelQueue.Clear();
+
+        for (var i = 0; i < initialQueueCount; i++)
+        {
+            _waitingQueue.Enqueue(initialRequest);
+        }
+
+        _channelQueue.Enqueue(initialRequest, initialDepartureTime);
+        UpdateTNext();
     }
 }

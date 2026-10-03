@@ -2,7 +2,7 @@
 
 namespace Lab2DES.Routing;
 
-public abstract class Router : IDestinationElement
+public abstract class Router<TRequest> : Element, IDestinationElement<TRequest>
 {
-    public abstract bool InAct();
+    public abstract bool InAct(TRequest request);
 }

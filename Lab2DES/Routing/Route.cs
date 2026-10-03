@@ -2,13 +2,13 @@
 
 namespace Lab2DES.Routing;
 
-public record Route
+public record Route<TRequest>
 {
-    public IDestinationElement Destination { get; init; }
+    public IDestinationElement<TRequest> Destination { get; init; }
     public RoutePriority Priority { get; init; }
     public double Probability { get; init; }
 
-    public Route(IDestinationElement destination, RoutePriority priority, double probability)
+    public Route(IDestinationElement<TRequest> destination, RoutePriority priority, double probability)
     {
         ArgumentNullException.ThrowIfNull(destination);
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(probability);
