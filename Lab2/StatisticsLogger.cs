@@ -1,8 +1,9 @@
-﻿using Lab2DES.Elements;
+﻿using Core;
+using Core.Elements.Basic;
 
-namespace Lab2DES;
+namespace Lab2;
 
-public static class StatisticsHandler<TRequest>
+public static class StatisticsLogger<TRequest>
 {
     public static void Show(Model<TRequest> model)
     {
@@ -35,11 +36,5 @@ public static class StatisticsHandler<TRequest>
                 Console.WriteLine($"{name} | {quantity} | {"-",-13} | {"-",-13} | {"-",-11}");
             }
         }
-    }
-
-    public static void Calculate(Process<TRequest> process, double delta)
-    {
-        process.MeanQueue += process.CurrQueue * delta;
-        process.MeanLoadTime += process.CurrChannels * delta;
     }
 }

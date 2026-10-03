@@ -1,7 +1,8 @@
-﻿using Lab2DES;
-using Lab2DES.Distributions;
-using Lab2DES.Elements;
-using Lab2DES.Routing;
+﻿using Core;
+using Core.Distributions;
+using Core.Elements.Basic;
+using Lab2;
+using Lab2.Routing;
 
 var c = new Create<int>
 {
@@ -59,4 +60,4 @@ ps[2].NextElement = new PriorityRouter<int>([
 
 var model = new Model<int>([c, .. ps, d]);
 model.Simulate(10000.0);
-StatisticsHandler<int>.Show(model);
+StatisticsLogger<int>.Show(model);

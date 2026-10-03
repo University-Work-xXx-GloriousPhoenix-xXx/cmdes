@@ -1,6 +1,6 @@
-﻿using Lab2DES.Elements;
+﻿using Core.Hierarchy;
 
-namespace Lab2DES.Routing;
+namespace Lab2.Routing;
 
 public record Route<TRequest>
 {
