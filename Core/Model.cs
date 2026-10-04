@@ -7,13 +7,14 @@ public class Model<TRequest>(IList<Element> elements)
 {
     public IList<Element> Elements { get; init; } = elements;
     public double TCurr { get; private set; } = 0.0;
+    public long TotalEventsCount { get; private set; } = 0;
+    public long? MaxEventsLimit { get; set; }
     private const double Epsilon = 1e-9;
-
     public Action<double>? OnCustomStep { get; set; }
 
     public Model<TRequest> Simulate(double time)
     {
-        while (TCurr < time)
+        while (TCurr < time && (!MaxEventsLimit.HasValue || TotalEventsCount < MaxEventsLimit.Value))
         {
             SimulateStep(time);
         }
@@ -62,6 +63,8 @@ public class Model<TRequest>(IList<Element> elements)
                 proc.OutAct();
             }
         }
+
+        TotalEventsCount++;
     }
 
     private void ExecuteStep(double delta)
