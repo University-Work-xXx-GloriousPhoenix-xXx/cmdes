@@ -11,41 +11,421 @@
       <toolspecific tool="PetriObjModel" version="2.3.0">
         <petriObject index="0" name="Free elements" priority="0" x="0" y="0"/>
       </toolspecific>
-      <place id="p-p1-c94594d6">
+      <place id="p-served-9fe9bd52">
         <name>
-          <text>P1</text>
+          <text>Served</text>
         </name>
+        <graphics>
+          <position x="791" y="375"/>
+        </graphics>
+      </place>
+      <place id="p-new-client-f0ace62a">
+        <name>
+          <text>New client</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
         <graphics>
           <position x="563" y="484"/>
         </graphics>
       </place>
-      <place id="p-p3-c79f8dd5">
+      <place id="p-sold-21ef6f67">
         <name>
-          <text>P3</text>
+          <text>Sold</text>
         </name>
         <graphics>
-          <position x="705" y="483"/>
+          <position x="1126" y="605"/>
         </graphics>
       </place>
-      <transition id="t-t1-d0818104">
+      <place id="p-drain-trigger-01a2ba36">
         <name>
-          <text>T1</text>
+          <text>Drain trigger</text>
         </name>
+        <graphics>
+          <position x="1320" y="730"/>
+        </graphics>
+      </place>
+      <place id="p-total-sold-6745c18e">
+        <name>
+          <text>Total sold</text>
+        </name>
+        <graphics>
+          <position x="1317" y="843"/>
+        </graphics>
+      </place>
+      <place id="p-fridges-1b918db3">
+        <name>
+          <text>Fridges</text>
+        </name>
+        <initialMarking>
+          <text>72</text>
+        </initialMarking>
+        <graphics>
+          <position x="1051" y="483"/>
+        </graphics>
+      </place>
+      <place id="p-queue-4f0af267">
+        <name>
+          <text>Queue</text>
+        </name>
+        <graphics>
+          <position x="850" y="607"/>
+        </graphics>
+      </place>
+      <place id="p-left-37a9d6b8">
+        <name>
+          <text>Left</text>
+        </name>
+        <graphics>
+          <position x="566" y="604"/>
+        </graphics>
+      </place>
+      <place id="p-queued-92983734">
+        <name>
+          <text>Queued</text>
+        </name>
+        <graphics>
+          <position x="973" y="726"/>
+        </graphics>
+      </place>
+      <place id="p-check-requested-74ae4d9e">
+        <name>
+          <text>Check requested</text>
+        </name>
+        <graphics>
+          <position x="1323" y="605"/>
+        </graphics>
+      </place>
+      <place id="p-entered-75541295">
+        <name>
+          <text>Entered</text>
+        </name>
+        <graphics>
+          <position x="719" y="483"/>
+        </graphics>
+      </place>
+      <place id="p-cancelled-d88aa255">
+        <name>
+          <text>Cancelled</text>
+        </name>
+        <graphics>
+          <position x="1495" y="486"/>
+        </graphics>
+      </place>
+      <place id="p-order-trigger-d70180db">
+        <name>
+          <text>Order trigger</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="1123" y="727"/>
+        </graphics>
+      </place>
+      <place id="p-new-check-b4301f3b">
+        <name>
+          <text>New check</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="1496" y="607"/>
+        </graphics>
+      </place>
+      <place id="p-purchase-count-c5d91296">
+        <name>
+          <text>Purchase count</text>
+        </name>
+        <graphics>
+          <position x="1329" y="483"/>
+        </graphics>
+      </place>
+      <transition id="t-cancelling-9f97d460">
+        <name>
+          <text>Cancelling</text>
+        </name>
+        <graphics>
+          <position x="1408" y="485"/>
+        </graphics>
+      </transition>
+      <transition id="t-reserving-8b047c8c">
+        <name>
+          <text>Reserving</text>
+        </name>
+        <graphics>
+          <position x="713" y="607"/>
+        </graphics>
+      </transition>
+      <transition id="t-checking-00987304">
+        <name>
+          <text>Checking</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>4.0</timeDelay>
+          <delayMeanValue>4.0</delayMeanValue>
+        </toolspecific>
+        <graphics>
+          <position x="1409" y="605"/>
+        </graphics>
+      </transition>
+      <transition id="t-leave-ac9671bd">
+        <name>
+          <text>Leave</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <probability>0.8</probability>
+        </toolspecific>
+        <graphics>
+          <position x="643" y="603"/>
+        </graphics>
+      </transition>
+      <transition id="t-serve-75b24d71">
+        <name>
+          <text>Serve</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <priority>1</priority>
+        </toolspecific>
+        <graphics>
+          <position x="893" y="482"/>
+        </graphics>
+      </transition>
+      <transition id="t-relocating-ac3ce56a">
+        <name>
+          <text>Relocating</text>
+        </name>
+        <graphics>
+          <position x="1224" y="841"/>
+        </graphics>
+      </transition>
+      <transition id="t-to-queue-e440f91f">
+        <name>
+          <text>To queue</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <probability>0.2</probability>
+        </toolspecific>
+        <graphics>
+          <position x="975" y="604"/>
+        </graphics>
+      </transition>
+      <transition id="t-enter-b51bd6fb">
+        <name>
+          <text>Enter</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>0.2</timeDelay>
+          <delayMeanValue>0.2</delayMeanValue>
+          <distribution>exp</distribution>
+        </toolspecific>
         <graphics>
           <position x="640" y="483"/>
         </graphics>
       </transition>
-      <arc id="arc-781fb94c" source="p-p1-c94594d6" target="t-t1-d0818104">
+      <transition id="t-drain-sold-571291fa">
+        <name>
+          <text>Drain sold</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <priority>2</priority>
+        </toolspecific>
+        <graphics>
+          <position x="1223" y="728"/>
+        </graphics>
+      </transition>
+      <transition id="t-deliver-91de9dcb">
+        <name>
+          <text>Deliver</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>3.0</timeDelay>
+          <delayMeanValue>3.0</delayMeanValue>
+        </toolspecific>
+        <graphics>
+          <position x="1201" y="484"/>
+        </graphics>
+      </transition>
+      <transition id="t-order-b83c87c1">
+        <name>
+          <text>Order</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <priority>1</priority>
+        </toolspecific>
+        <graphics>
+          <position x="1224" y="603"/>
+        </graphics>
+      </transition>
+      <arc id="arc-6ffa7b09" source="p-check-requested-74ae4d9e" target="t-cancelling-9f97d460">
         <inscription>
           <text>1</text>
         </inscription>
       </arc>
-      <arc id="arc-2181087d" source="t-t1-d0818104" target="p-p1-c94594d6">
+      <arc id="arc-5bbb66a6" source="p-queue-4f0af267" target="t-reserving-8b047c8c">
         <inscription>
           <text>1</text>
         </inscription>
       </arc>
-      <arc id="arc-cd4c7424" source="t-t1-d0818104" target="p-p3-c79f8dd5">
+      <arc id="arc-f445e22a" source="p-fridges-1b918db3" target="t-reserving-8b047c8c">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-070f9767" source="p-new-check-b4301f3b" target="t-checking-00987304">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-ecadabb4" source="p-entered-75541295" target="t-leave-ac9671bd">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-3dbd6e28" source="p-fridges-1b918db3" target="t-serve-75b24d71">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-54fbbafe" source="p-entered-75541295" target="t-serve-75b24d71">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-79c125df" source="p-drain-trigger-01a2ba36" target="t-relocating-ac3ce56a">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-3877cae9" source="p-entered-75541295" target="t-to-queue-e440f91f">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-dd060044" source="p-new-client-f0ace62a" target="t-enter-b51bd6fb">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-65f7b0a9" source="p-drain-trigger-01a2ba36" target="t-drain-sold-571291fa">
+        <inscription>
+          <text>1</text>
+        </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <informational>true</informational>
+        </toolspecific>
+      </arc>
+      <arc id="arc-fb79c8eb" source="p-sold-21ef6f67" target="t-drain-sold-571291fa">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-67b819d0" source="p-purchase-count-c5d91296" target="t-deliver-91de9dcb">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-b71ff5a0" source="p-order-trigger-d70180db" target="t-order-b83c87c1">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-0e9a9ec5" source="p-check-requested-74ae4d9e" target="t-order-b83c87c1">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-e9810a9e" source="p-sold-21ef6f67" target="t-order-b83c87c1">
+        <inscription>
+          <text>54</text>
+        </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <informational>true</informational>
+        </toolspecific>
+      </arc>
+      <arc id="arc-115cc8fd" source="t-cancelling-9f97d460" target="p-cancelled-d88aa255">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-a6cc90b3" source="t-reserving-8b047c8c" target="p-served-9fe9bd52">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-5369c0c5" source="t-checking-00987304" target="p-new-check-b4301f3b">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-36b3c27b" source="t-checking-00987304" target="p-check-requested-74ae4d9e">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-58fe436b" source="t-leave-ac9671bd" target="p-left-37a9d6b8">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-cec354f2" source="t-serve-75b24d71" target="p-served-9fe9bd52">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-285e5208" source="t-serve-75b24d71" target="p-sold-21ef6f67">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-1d0daf39" source="t-relocating-ac3ce56a" target="p-order-trigger-d70180db">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-9b66d408" source="t-to-queue-e440f91f" target="p-queue-4f0af267">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-ba1eda67" source="t-to-queue-e440f91f" target="p-sold-21ef6f67">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-a1305f01" source="t-to-queue-e440f91f" target="p-queued-92983734">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-27bad61b" source="t-enter-b51bd6fb" target="p-new-client-f0ace62a">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-2e4d054d" source="t-enter-b51bd6fb" target="p-entered-75541295">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-4a24a632" source="t-drain-sold-571291fa" target="p-total-sold-6745c18e">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-33839cf1" source="t-drain-sold-571291fa" target="p-purchase-count-c5d91296">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-ab615342" source="t-deliver-91de9dcb" target="p-fridges-1b918db3">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-ec3aee6c" source="t-order-b83c87c1" target="p-drain-trigger-01a2ba36">
         <inscription>
           <text>1</text>
         </inscription>
