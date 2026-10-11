@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="task5-4" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name>
+      <text>task5-4</text>
+    </name>
+    <page id="object0">
+      <name>
+        <text>Free elements</text>
+      </name>
+      <toolspecific tool="PetriObjModel" version="2.3.0">
+        <petriObject index="0" name="Free elements" priority="0" x="0" y="0"/>
+      </toolspecific>
+      <place id="p-p1-c94594d6">
+        <name>
+          <text>P1</text>
+        </name>
+        <graphics>
+          <position x="563" y="484"/>
+        </graphics>
+      </place>
+      <place id="p-p3-c79f8dd5">
+        <name>
+          <text>P3</text>
+        </name>
+        <graphics>
+          <position x="705" y="483"/>
+        </graphics>
+      </place>
+      <transition id="t-t1-d0818104">
+        <name>
+          <text>T1</text>
+        </name>
+        <graphics>
+          <position x="640" y="483"/>
+        </graphics>
+      </transition>
+      <arc id="arc-781fb94c" source="p-p1-c94594d6" target="t-t1-d0818104">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-2181087d" source="t-t1-d0818104" target="p-p1-c94594d6">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-cd4c7424" source="t-t1-d0818104" target="p-p3-c79f8dd5">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+    </page>
+    <toolspecific tool="PetriObjModel" version="2.3.0">
+      <petriObjectLinks/>
+    </toolspecific>
+  </net>
+</pnml>

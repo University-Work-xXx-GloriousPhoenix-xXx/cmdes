@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="task5-3" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name>
+      <text>task5-3</text>
+    </name>
+    <page id="object0">
+      <name>
+        <text>Free elements</text>
+      </name>
+      <toolspecific tool="PetriObjModel" version="2.3.0">
+        <petriObject index="0" name="Free elements" priority="0" x="0" y="0"/>
+      </toolspecific>
+      <place id="p-lbusaready-7551033b">
+        <name>
+          <text>LBusAReady</text>
+        </name>
+        <graphics>
+          <position x="863" y="101"/>
+        </graphics>
+      </place>
+      <place id="p-rready-42a71617">
+        <name>
+          <text>RReady</text>
+        </name>
+        <graphics>
+          <position x="1469" y="404"/>
+        </graphics>
+      </place>
+      <place id="p-rtotal-934c50d4">
+        <name>
+          <text>RTotal</text>
+        </name>
+        <initialMarking>
+          <text>20041</text>
+        </initialMarking>
+        <graphics>
+          <position x="1396" y="312"/>
+        </graphics>
+      </place>
+      <place id="p-lbusaarrived-d127fc88">
+        <name>
+          <text>LBusAArrived</text>
+        </name>
+        <graphics>
+          <position x="856" y="334"/>
+        </graphics>
+      </place>
+      <place id="p-lleft-81cb6df3">
+        <name>
+          <text>LLeft</text>
+        </name>
+        <initialMarking>
+          <text>11640</text>
+        </initialMarking>
+        <graphics>
+          <position x="622" y="491"/>
+        </graphics>
+      </place>
+      <place id="p-rstop-7ee1266a">
+        <name>
+          <text>RStop</text>
+        </name>
+        <graphics>
+          <position x="1325" y="400"/>
+        </graphics>
+      </place>
+      <place id="p-lbusbarrived-55648db0">
+        <name>
+          <text>LBusBArrived</text>
+        </name>
+        <graphics>
+          <position x="856" y="445"/>
+        </graphics>
+      </place>
+      <place id="p-lqueue-44658002">
+        <name>
+          <text>LQueue</text>
+        </name>
+        <initialMarking>
+          <text>30</text>
+        </initialMarking>
+        <graphics>
+          <position x="776" y="372"/>
+        </graphics>
+      </place>
+      <place id="p-lstop-20d865f4">
+        <name>
+          <text>LStop</text>
+        </name>
+        <graphics>
+          <position x="630" y="372"/>
+        </graphics>
+      </place>
+      <place id="p-busadriven-d68efccb">
+        <name>
+          <text>BusADriven</text>
+        </name>
+        <initialMarking>
+          <text>386</text>
+        </initialMarking>
+        <graphics>
+          <position x="984" y="215"/>
+        </graphics>
+      </place>
+      <place id="p-rleft-e4eb0a01">
+        <name>
+          <text>RLeft</text>
+        </name>
+        <initialMarking>
+          <text>11736</text>
+        </initialMarking>
+        <graphics>
+          <position x="1324" y="511"/>
+        </graphics>
+      </place>
+      <place id="p-ltotal-cd4a7870">
+        <name>
+          <text>LTotal</text>
+        </name>
+        <initialMarking>
+          <text>19970</text>
+        </initialMarking>
+        <graphics>
+          <position x="560" y="270"/>
+        </graphics>
+      </place>
+      <place id="p-lready-67610f95">
+        <name>
+          <text>LReady</text>
+        </name>
+        <graphics>
+          <position x="489" y="372"/>
+        </graphics>
+      </place>
+      <place id="p-rbusbarrived-5c85421f">
+        <name>
+          <text>RBusBArrived</text>
+        </name>
+        <graphics>
+          <position x="1092" y="695"/>
+        </graphics>
+      </place>
+      <place id="p-lbusbready-ff8cf498">
+        <name>
+          <text>LBusBReady</text>
+        </name>
+        <graphics>
+          <position x="854" y="695"/>
+        </graphics>
+      </place>
+      <place id="p-rqueue-cb658c97">
+        <name>
+          <text>RQueue</text>
+        </name>
+        <initialMarking>
+          <text>30</text>
+        </initialMarking>
+        <graphics>
+          <position x="1188" y="397"/>
+        </graphics>
+      </place>
+      <place id="p-busbdriven-39bd53da">
+        <name>
+          <text>BusBDriven</text>
+        </name>
+        <initialMarking>
+          <text>275</text>
+        </initialMarking>
+        <graphics>
+          <position x="976" y="568"/>
+        </graphics>
+      </place>
+      <place id="p-rbusbready-d71beadc">
+        <name>
+          <text>RBusBReady</text>
+        </name>
+        <graphics>
+          <position x="1097" y="448"/>
+        </graphics>
+      </place>
+      <place id="p-rbusaready-94fb0814">
+        <name>
+          <text>RBusAReady</text>
+        </name>
+        <graphics>
+          <position x="1102" y="340"/>
+        </graphics>
+      </place>
+      <place id="p-rbusaarrived-657a2b11">
+        <name>
+          <text>RBusAArrived</text>
+        </name>
+        <graphics>
+          <position x="1106" y="102"/>
+        </graphics>
+      </place>
+      <transition id="t-rleave-17ba847e">
+        <name>
+          <text>RLeave</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <priority>1</priority>
+        </toolspecific>
+        <graphics>
+          <position x="1260" y="510"/>
+        </graphics>
+      </transition>
+      <transition id="t-rgobusa-b483f77d">
+        <name>
+          <text>RGoBusA</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>20.0</timeDelay>
+          <delayMeanValue>20.0</delayMeanValue>
+          <standardDeviation>5.0</standardDeviation>
+          <priority>1</priority>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="1108" y="220"/>
+        </graphics>
+      </transition>
+      <transition id="t-lgobusa-490f248c">
+        <name>
+          <text>LGoBusA</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>20.0</timeDelay>
+          <delayMeanValue>20.0</delayMeanValue>
+          <standardDeviation>5.0</standardDeviation>
+          <priority>1</priority>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="859" y="214"/>
+        </graphics>
+      </transition>
+      <transition id="t-lbusbunloading-82cb429d">
+        <name>
+          <text>LBusBUnloading</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>5.0</timeDelay>
+          <delayMeanValue>5.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="977" y="449"/>
+        </graphics>
+      </transition>
+      <transition id="t-lemit-0535197e">
+        <name>
+          <text>LEmit</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>0.5</timeDelay>
+          <delayMeanValue>0.5</delayMeanValue>
+          <standardDeviation>0.2</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="559" y="372"/>
+        </graphics>
+      </transition>
+      <transition id="t-lgobusb-0837f94a">
+        <name>
+          <text>LGoBusB</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>30.0</timeDelay>
+          <delayMeanValue>30.0</delayMeanValue>
+          <standardDeviation>5.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="855" y="567"/>
+        </graphics>
+      </transition>
+      <transition id="t-ltoqueue-db62c752">
+        <name>
+          <text>LToQueue</text>
+        </name>
+        <graphics>
+          <position x="704" y="374"/>
+        </graphics>
+      </transition>
+      <transition id="t-remit-c676843d">
+        <name>
+          <text>REmit</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>0.5</timeDelay>
+          <delayMeanValue>0.5</delayMeanValue>
+          <standardDeviation>0.2</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="1395" y="404"/>
+        </graphics>
+      </transition>
+      <transition id="t-rbusbunloading-2a6d2c9a">
+        <name>
+          <text>RBusBUnloading</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>5.0</timeDelay>
+          <delayMeanValue>5.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="971" y="694"/>
+        </graphics>
+      </transition>
+      <transition id="t-lbusaunloading-6f5dbd54">
+        <name>
+          <text>LBusAUnloading</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>5.0</timeDelay>
+          <delayMeanValue>5.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="976" y="336"/>
+        </graphics>
+      </transition>
+      <transition id="t-rbusaunloading-3559920e">
+        <name>
+          <text>RBusAUnloading</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>5.0</timeDelay>
+          <delayMeanValue>5.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="986" y="104"/>
+        </graphics>
+      </transition>
+      <transition id="t-rtoqueue-4578231d">
+        <name>
+          <text>RToQueue</text>
+        </name>
+        <graphics>
+          <position x="1258" y="399"/>
+        </graphics>
+      </transition>
+      <transition id="t-rgobusb-7691cd85">
+        <name>
+          <text>RGoBusB</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>30.0</timeDelay>
+          <delayMeanValue>30.0</delayMeanValue>
+          <standardDeviation>5.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="1099" y="568"/>
+        </graphics>
+      </transition>
+      <transition id="t-lleave-9b035c25">
+        <name>
+          <text>LLeave</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <priority>1</priority>
+        </toolspecific>
+        <graphics>
+          <position x="710" y="489"/>
+        </graphics>
+      </transition>
+      <arc id="arc-c23e6a79" source="p-rstop-7ee1266a" target="t-rleave-17ba847e">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-3fb5c3a7" source="p-rqueue-cb658c97" target="t-rleave-17ba847e">
+        <inscription>
+          <text>30</text>
+        </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <informational>true</informational>
+        </toolspecific>
+      </arc>
+      <arc id="arc-1c25e03e" source="p-rbusaready-94fb0814" target="t-rgobusa-b483f77d">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-f137422a" source="p-rqueue-cb658c97" target="t-rgobusa-b483f77d">
+        <inscription>
+          <text>25</text>
+        </inscription>
+      </arc>
+      <arc id="arc-357a9106" source="p-lbusaready-7551033b" target="t-lgobusa-490f248c">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-7ddf0f83" source="p-lqueue-44658002" target="t-lgobusa-490f248c">
+        <inscription>
+          <text>25</text>
+        </inscription>
+      </arc>
+      <arc id="arc-8d516c7a" source="p-lbusbarrived-55648db0" target="t-lbusbunloading-82cb429d">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-539846ad" source="p-lready-67610f95" target="t-lemit-0535197e">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-5ecee3f8" source="p-lbusbready-ff8cf498" target="t-lgobusb-0837f94a">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-2b5324a4" source="p-lqueue-44658002" target="t-lgobusb-0837f94a">
+        <inscription>
+          <text>25</text>
+        </inscription>
+      </arc>
+      <arc id="arc-256ad124" source="p-lstop-20d865f4" target="t-ltoqueue-db62c752">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-621e611f" source="p-rready-42a71617" target="t-remit-c676843d">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-6ea7ab75" source="p-rbusbarrived-5c85421f" target="t-rbusbunloading-2a6d2c9a">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-4a371d0f" source="p-lbusaarrived-d127fc88" target="t-lbusaunloading-6f5dbd54">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-30fde103" source="p-rbusaarrived-657a2b11" target="t-rbusaunloading-3559920e">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-1924acc8" source="p-rstop-7ee1266a" target="t-rtoqueue-4578231d">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-6c803dfe" source="p-rbusbready-d71beadc" target="t-rgobusb-7691cd85">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-7c191a8c" source="p-rqueue-cb658c97" target="t-rgobusb-7691cd85">
+        <inscription>
+          <text>25</text>
+        </inscription>
+      </arc>
+      <arc id="arc-cb82cfd5" source="p-lqueue-44658002" target="t-lleave-9b035c25">
+        <inscription>
+          <text>30</text>
+        </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <informational>true</informational>
+        </toolspecific>
+      </arc>
+      <arc id="arc-39d9a8c4" source="p-lstop-20d865f4" target="t-lleave-9b035c25">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-6f04b807" source="t-rleave-17ba847e" target="p-rleft-e4eb0a01">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-758fc3a3" source="t-rgobusa-b483f77d" target="p-busadriven-d68efccb">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-017c94fa" source="t-rgobusa-b483f77d" target="p-rbusaarrived-657a2b11">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-1e418516" source="t-lgobusa-490f248c" target="p-busadriven-d68efccb">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-4b98ec78" source="t-lgobusa-490f248c" target="p-lbusaarrived-d127fc88">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-b88fbe8a" source="t-lbusbunloading-82cb429d" target="p-rbusbready-d71beadc">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-c72a1605" source="t-lemit-0535197e" target="p-lready-67610f95">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-694bad35" source="t-lemit-0535197e" target="p-ltotal-cd4a7870">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-1fd9f173" source="t-lemit-0535197e" target="p-lstop-20d865f4">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-66d61d05" source="t-lgobusb-0837f94a" target="p-busbdriven-39bd53da">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-a5cbfffe" source="t-lgobusb-0837f94a" target="p-lbusbarrived-55648db0">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-b3923c7d" source="t-ltoqueue-db62c752" target="p-lqueue-44658002">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-1d701b2a" source="t-remit-c676843d" target="p-rready-42a71617">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-91aba754" source="t-remit-c676843d" target="p-rtotal-934c50d4">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-b7b84a9a" source="t-remit-c676843d" target="p-rstop-7ee1266a">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-5f040f93" source="t-rbusbunloading-2a6d2c9a" target="p-lbusbready-ff8cf498">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-bcc6a23c" source="t-lbusaunloading-6f5dbd54" target="p-rbusaready-94fb0814">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-dd8eb9ed" source="t-rbusaunloading-3559920e" target="p-lbusaready-7551033b">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-f4844724" source="t-rtoqueue-4578231d" target="p-rqueue-cb658c97">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-eaa7435c" source="t-rgobusb-7691cd85" target="p-busbdriven-39bd53da">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-9ad75d17" source="t-rgobusb-7691cd85" target="p-rbusbarrived-5c85421f">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-55d71f6e" source="t-lleave-9b035c25" target="p-lleft-81cb6df3">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+    </page>
+    <toolspecific tool="PetriObjModel" version="2.3.0">
+      <petriObjectLinks/>
+    </toolspecific>
+  </net>
+</pnml>
