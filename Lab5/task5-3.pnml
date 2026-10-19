@@ -15,6 +15,9 @@
         <name>
           <text>LBusAReady</text>
         </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
         <graphics>
           <position x="863" y="101"/>
         </graphics>
@@ -23,6 +26,9 @@
         <name>
           <text>RReady</text>
         </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
         <graphics>
           <position x="1469" y="404"/>
         </graphics>
@@ -31,9 +37,6 @@
         <name>
           <text>RTotal</text>
         </name>
-        <initialMarking>
-          <text>20041</text>
-        </initialMarking>
         <graphics>
           <position x="1396" y="312"/>
         </graphics>
@@ -50,9 +53,6 @@
         <name>
           <text>LLeft</text>
         </name>
-        <initialMarking>
-          <text>11640</text>
-        </initialMarking>
         <graphics>
           <position x="622" y="491"/>
         </graphics>
@@ -77,9 +77,6 @@
         <name>
           <text>LQueue</text>
         </name>
-        <initialMarking>
-          <text>30</text>
-        </initialMarking>
         <graphics>
           <position x="776" y="372"/>
         </graphics>
@@ -96,9 +93,6 @@
         <name>
           <text>BusADriven</text>
         </name>
-        <initialMarking>
-          <text>386</text>
-        </initialMarking>
         <graphics>
           <position x="984" y="215"/>
         </graphics>
@@ -107,9 +101,6 @@
         <name>
           <text>RLeft</text>
         </name>
-        <initialMarking>
-          <text>11736</text>
-        </initialMarking>
         <graphics>
           <position x="1324" y="511"/>
         </graphics>
@@ -118,9 +109,6 @@
         <name>
           <text>LTotal</text>
         </name>
-        <initialMarking>
-          <text>19970</text>
-        </initialMarking>
         <graphics>
           <position x="560" y="270"/>
         </graphics>
@@ -129,6 +117,9 @@
         <name>
           <text>LReady</text>
         </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
         <graphics>
           <position x="489" y="372"/>
         </graphics>
@@ -145,6 +136,9 @@
         <name>
           <text>LBusBReady</text>
         </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
         <graphics>
           <position x="854" y="695"/>
         </graphics>
@@ -153,20 +147,14 @@
         <name>
           <text>RQueue</text>
         </name>
-        <initialMarking>
-          <text>30</text>
-        </initialMarking>
         <graphics>
-          <position x="1188" y="397"/>
+          <position x="1198" y="398"/>
         </graphics>
       </place>
       <place id="p-busbdriven-39bd53da">
         <name>
           <text>BusBDriven</text>
         </name>
-        <initialMarking>
-          <text>275</text>
-        </initialMarking>
         <graphics>
           <position x="976" y="568"/>
         </graphics>
@@ -203,7 +191,7 @@
           <priority>1</priority>
         </toolspecific>
         <graphics>
-          <position x="1260" y="510"/>
+          <position x="1261" y="510"/>
         </graphics>
       </transition>
       <transition id="t-rgobusa-b483f77d">
@@ -218,7 +206,7 @@
           <distribution>unif</distribution>
         </toolspecific>
         <graphics>
-          <position x="1108" y="220"/>
+          <position x="1109" y="220"/>
         </graphics>
       </transition>
       <transition id="t-lgobusa-490f248c">
@@ -233,7 +221,7 @@
           <distribution>unif</distribution>
         </toolspecific>
         <graphics>
-          <position x="859" y="214"/>
+          <position x="860" y="214"/>
         </graphics>
       </transition>
       <transition id="t-lbusbunloading-82cb429d">
@@ -372,7 +360,7 @@
           <priority>1</priority>
         </toolspecific>
         <graphics>
-          <position x="710" y="489"/>
+          <position x="711" y="489"/>
         </graphics>
       </transition>
       <arc id="arc-c23e6a79" source="p-rstop-7ee1266a" target="t-rleave-17ba847e">
@@ -395,8 +383,11 @@
       </arc>
       <arc id="arc-f137422a" source="p-rqueue-cb658c97" target="t-rgobusa-b483f77d">
         <inscription>
-          <text>25</text>
+          <text>1</text>
         </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <multiplicityParameter>n</multiplicityParameter>
+        </toolspecific>
       </arc>
       <arc id="arc-357a9106" source="p-lbusaready-7551033b" target="t-lgobusa-490f248c">
         <inscription>
@@ -405,8 +396,11 @@
       </arc>
       <arc id="arc-7ddf0f83" source="p-lqueue-44658002" target="t-lgobusa-490f248c">
         <inscription>
-          <text>25</text>
+          <text>1</text>
         </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <multiplicityParameter>n</multiplicityParameter>
+        </toolspecific>
       </arc>
       <arc id="arc-8d516c7a" source="p-lbusbarrived-55648db0" target="t-lbusbunloading-82cb429d">
         <inscription>
@@ -425,8 +419,11 @@
       </arc>
       <arc id="arc-2b5324a4" source="p-lqueue-44658002" target="t-lgobusb-0837f94a">
         <inscription>
-          <text>25</text>
+          <text>1</text>
         </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <multiplicityParameter>n</multiplicityParameter>
+        </toolspecific>
       </arc>
       <arc id="arc-256ad124" source="p-lstop-20d865f4" target="t-ltoqueue-db62c752">
         <inscription>
@@ -465,8 +462,11 @@
       </arc>
       <arc id="arc-7c191a8c" source="p-rqueue-cb658c97" target="t-rgobusb-7691cd85">
         <inscription>
-          <text>25</text>
+          <text>1</text>
         </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <multiplicityParameter>n</multiplicityParameter>
+        </toolspecific>
       </arc>
       <arc id="arc-cb82cfd5" source="p-lqueue-44658002" target="t-lleave-9b035c25">
         <inscription>
