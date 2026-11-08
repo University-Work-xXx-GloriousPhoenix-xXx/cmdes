@@ -8,8 +8,8 @@
       <name>
         <text>Main</text>
       </name>
-      <toolspecific tool="PetriObjModel" version="2.3.0">
-        <petriObject height="863" index="0" name="Main" priority="0" width="824" x="55" y="17"/>
+      <toolspecific tool="PetriObjModel" version="2.8.1">
+        <petriObject contentVisible="true" height="863" index="0" modelId="o_cfe98eaf86f14feda25a98d1abb7fe84" name="Main" priority="0" width="824" x="55" y="17"/>
         <netTemplate method="CreateNetGenerator">
           <argument>1.0</argument>
         </netTemplate>
@@ -128,11 +128,27 @@
           <position x="126" y="131"/>
         </graphics>
       </place>
+      <place id="p-p1-90eefb16">
+        <name>
+          <text>Generated</text>
+        </name>
+        <graphics>
+          <position x="122" y="223"/>
+        </graphics>
+      </place>
+      <place id="p-p2-5669f299">
+        <name>
+          <text>Returned</text>
+        </name>
+        <graphics>
+          <position x="149" y="391"/>
+        </graphics>
+      </place>
       <transition id="t-returning-to-1-5292ae19">
         <name>
           <text>Returning to 1</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>5.0</timeDelay>
           <delayMeanValue>5.0</delayMeanValue>
         </toolspecific>
@@ -144,7 +160,7 @@
         <name>
           <text>Moving to 3</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>1.0</timeDelay>
           <delayMeanValue>1.0</delayMeanValue>
         </toolspecific>
@@ -156,7 +172,7 @@
         <name>
           <text>Moving to 5</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>1.0</timeDelay>
           <delayMeanValue>1.0</delayMeanValue>
         </toolspecific>
@@ -168,7 +184,7 @@
         <name>
           <text>Moving to 2</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>1.0</timeDelay>
           <delayMeanValue>1.0</delayMeanValue>
         </toolspecific>
@@ -180,49 +196,49 @@
         <name>
           <text>Processing 1</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>1.0</timeDelay>
           <delayMeanValue>1.0</delayMeanValue>
           <priority>1</priority>
           <distribution>exp</distribution>
         </toolspecific>
         <graphics>
-          <position x="635" y="124"/>
+          <position x="636" y="124"/>
         </graphics>
       </transition>
       <transition id="t-processing-2-602b1e59">
         <name>
           <text>Processing 2</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>1.0</timeDelay>
           <delayMeanValue>1.0</delayMeanValue>
           <priority>1</priority>
           <distribution>exp</distribution>
         </toolspecific>
         <graphics>
-          <position x="642" y="273"/>
+          <position x="643" y="273"/>
         </graphics>
       </transition>
       <transition id="t-processing-3-5c5c3a18">
         <name>
           <text>Processing 3</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>1.0</timeDelay>
           <delayMeanValue>1.0</delayMeanValue>
           <priority>1</priority>
           <distribution>exp</distribution>
         </toolspecific>
         <graphics>
-          <position x="644" y="429"/>
+          <position x="645" y="429"/>
         </graphics>
       </transition>
       <transition id="t-moving-to-4-c93f4f09">
         <name>
           <text>Moving to 4</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>1.0</timeDelay>
           <delayMeanValue>1.0</delayMeanValue>
         </toolspecific>
@@ -234,21 +250,21 @@
         <name>
           <text>Processing 4</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>1.0</timeDelay>
           <delayMeanValue>1.0</delayMeanValue>
           <priority>1</priority>
           <distribution>exp</distribution>
         </toolspecific>
         <graphics>
-          <position x="650" y="574"/>
+          <position x="651" y="574"/>
         </graphics>
       </transition>
       <transition id="t-emit-4378ba5a">
         <name>
           <text>Emit</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>0.25</timeDelay>
           <delayMeanValue>0.25</delayMeanValue>
         </toolspecific>
@@ -260,14 +276,14 @@
         <name>
           <text>Processing 5</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>1.0</timeDelay>
           <delayMeanValue>1.0</delayMeanValue>
           <priority>1</priority>
           <distribution>exp</distribution>
         </toolspecific>
         <graphics>
-          <position x="648" y="738"/>
+          <position x="649" y="738"/>
         </graphics>
       </transition>
       <arc id="arc-485e4c0c" source="p-position-5-cbade26f" target="t-returning-to-1-5292ae19">
@@ -435,8 +451,18 @@
           <text>1</text>
         </inscription>
       </arc>
+      <arc id="arc-5a0b315d" source="t-emit-4378ba5a" target="p-p1-90eefb16">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-3eeaac6c" source="t-returning-to-1-5292ae19" target="p-p2-5669f299">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
     </page>
-    <toolspecific tool="PetriObjModel" version="2.3.0">
+    <toolspecific tool="PetriObjModel" version="2.8.1">
       <petriObjectLinks/>
     </toolspecific>
   </net>
