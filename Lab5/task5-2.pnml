@@ -1,0 +1,1568 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="task5-2" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name>
+      <text>task5-2</text>
+    </name>
+    <page id="object0">
+      <name>
+        <text>Type 1</text>
+      </name>
+      <toolspecific tool="PetriObjModel" version="2.3.0">
+        <petriObject height="775" index="0" name="Type 1" priority="0" width="850" x="232" y="103"/>
+      </toolspecific>
+      <place id="p-processed-1-197f854f">
+        <name>
+          <text>Processed 1</text>
+        </name>
+        <graphics>
+          <position x="929" y="557"/>
+        </graphics>
+      </place>
+      <place id="p-moved-1-99d37830">
+        <name>
+          <text>Moved 1</text>
+        </name>
+        <graphics>
+          <position x="762" y="315"/>
+        </graphics>
+      </place>
+      <place id="p-free-slots-2-95309f15">
+        <name>
+          <text>Free slots 2</text>
+        </name>
+        <initialMarking>
+          <text>3</text>
+        </initialMarking>
+        <graphics>
+          <position x="380" y="667"/>
+        </graphics>
+      </place>
+      <place id="p-ready-1-125c0d70">
+        <name>
+          <text>Ready 1</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="541" y="195"/>
+        </graphics>
+      </place>
+      <place id="p-taken-1-a829db77">
+        <name>
+          <text>Taken 1</text>
+        </name>
+        <graphics>
+          <position x="617" y="312"/>
+        </graphics>
+      </place>
+      <place id="p-storage-ba7fb4b2">
+        <name>
+          <text>Storage</text>
+        </name>
+        <graphics>
+          <position x="924" y="784"/>
+        </graphics>
+      </place>
+      <place id="p-ready-3-906d149e">
+        <name>
+          <text>Ready 3</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="538" y="663"/>
+        </graphics>
+      </place>
+      <place id="p-ready-back-2-b483ad3c">
+        <name>
+          <text>Ready back 2</text>
+        </name>
+        <graphics>
+          <position x="536" y="429"/>
+        </graphics>
+      </place>
+      <place id="p-at-worker-1-a48725fe">
+        <name>
+          <text>At worker 1</text>
+        </name>
+        <graphics>
+          <position x="927" y="314"/>
+        </graphics>
+      </place>
+      <place id="p-processed-2-ec0b06fd">
+        <name>
+          <text>Processed 2</text>
+        </name>
+        <graphics>
+          <position x="459" y="780"/>
+        </graphics>
+      </place>
+      <place id="p-ready-e9c7bb9b">
+        <name>
+          <text>Ready</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="315" y="308"/>
+        </graphics>
+      </place>
+      <place id="p-free-slots-1-94079023">
+        <name>
+          <text>Free slots 1</text>
+        </name>
+        <initialMarking>
+          <text>3</text>
+        </initialMarking>
+        <graphics>
+          <position x="1014" y="420"/>
+        </graphics>
+      </place>
+      <place id="p-taken-2-505c6813">
+        <name>
+          <text>Taken 2</text>
+        </name>
+        <graphics>
+          <position x="754" y="551"/>
+        </graphics>
+      </place>
+      <place id="p-ready-back-3-01512f82">
+        <name>
+          <text>Ready back 3</text>
+        </name>
+        <graphics>
+          <position x="840" y="669"/>
+        </graphics>
+      </place>
+      <place id="p-ready-2-392ca19e">
+        <name>
+          <text>Ready 2</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="839" y="429"/>
+        </graphics>
+      </place>
+      <place id="p-moved-3-953952a8">
+        <name>
+          <text>Moved 3</text>
+        </name>
+        <graphics>
+          <position x="763" y="783"/>
+        </graphics>
+      </place>
+      <place id="p-ready-back-1-779a764f">
+        <name>
+          <text>Ready back 1</text>
+        </name>
+        <graphics>
+          <position x="844" y="196"/>
+        </graphics>
+      </place>
+      <place id="p-taken-3-97e875c1">
+        <name>
+          <text>Taken 3</text>
+        </name>
+        <graphics>
+          <position x="615" y="781"/>
+        </graphics>
+      </place>
+      <place id="p-at-worker-2-2d699bd0">
+        <name>
+          <text>At worker 2</text>
+        </name>
+        <graphics>
+          <position x="461" y="547"/>
+        </graphics>
+      </place>
+      <place id="p-arrival-point-41303b34">
+        <name>
+          <text>Arrival point</text>
+        </name>
+        <graphics>
+          <position x="465" y="311"/>
+        </graphics>
+      </place>
+      <place id="p-moved-2-6d1d5f42">
+        <name>
+          <text>Moved 2</text>
+        </name>
+        <graphics>
+          <position x="606" y="550"/>
+        </graphics>
+      </place>
+      <transition id="t-putting-down-1-ece3e7e3">
+        <name>
+          <text>Putting down 1</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>8.0</timeDelay>
+          <delayMeanValue>8.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="843" y="313"/>
+        </graphics>
+      </transition>
+      <transition id="t-putting-down-2-d4d0abac">
+        <name>
+          <text>Putting down 2</text>
+        </name>
+        <graphics>
+          <position x="535" y="548"/>
+        </graphics>
+      </transition>
+      <transition id="t-moving-2-60169d23">
+        <name>
+          <text>Moving 2</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>7.0</timeDelay>
+          <delayMeanValue>7.0</delayMeanValue>
+        </toolspecific>
+        <graphics>
+          <position x="677" y="550"/>
+        </graphics>
+      </transition>
+      <transition id="t-putting-down-3-6fb6bb98">
+        <name>
+          <text>Putting down 3</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>8.0</timeDelay>
+          <delayMeanValue>8.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="839" y="782"/>
+        </graphics>
+      </transition>
+      <transition id="t-returning-2-d1a593ca">
+        <name>
+          <text>Returning 2</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>7.0</timeDelay>
+          <delayMeanValue>7.0</delayMeanValue>
+        </toolspecific>
+        <graphics>
+          <position x="682" y="432"/>
+        </graphics>
+      </transition>
+      <transition id="t-moving-3-4ef09692">
+        <name>
+          <text>Moving 3</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>5.0</timeDelay>
+          <delayMeanValue>5.0</delayMeanValue>
+        </toolspecific>
+        <graphics>
+          <position x="686" y="782"/>
+        </graphics>
+      </transition>
+      <transition id="t-picking-up-3-b52e52f6">
+        <name>
+          <text>Picking up 3</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>8.0</timeDelay>
+          <delayMeanValue>8.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="539" y="779"/>
+        </graphics>
+      </transition>
+      <transition id="t-moving-1-288cb942">
+        <name>
+          <text>Moving 1</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>6.0</timeDelay>
+          <delayMeanValue>6.0</delayMeanValue>
+          <standardDeviation>2.0</standardDeviation>
+        </toolspecific>
+        <graphics>
+          <position x="685" y="313"/>
+        </graphics>
+      </transition>
+      <transition id="t-processing-1-43c4da3d">
+        <name>
+          <text>Processing 1</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>60.0</timeDelay>
+          <delayMeanValue>60.0</delayMeanValue>
+          <standardDeviation>10.0</standardDeviation>
+          <priority>1</priority>
+          <distribution>norm</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="932" y="418"/>
+        </graphics>
+      </transition>
+      <transition id="t-processing-2-9ca1f920">
+        <name>
+          <text>Processing 2</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>100.0</timeDelay>
+          <delayMeanValue>100.0</delayMeanValue>
+          <distribution>exp</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="462" y="668"/>
+        </graphics>
+      </transition>
+      <transition id="t-returning-1-5e20bc37">
+        <name>
+          <text>Returning 1</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>6.0</timeDelay>
+          <delayMeanValue>6.0</delayMeanValue>
+          <standardDeviation>2.0</standardDeviation>
+        </toolspecific>
+        <graphics>
+          <position x="686" y="195"/>
+        </graphics>
+      </transition>
+      <transition id="t-picking-up-2-359cdd06">
+        <name>
+          <text>Picking up 2</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>8.0</timeDelay>
+          <delayMeanValue>8.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="838" y="553"/>
+        </graphics>
+      </transition>
+      <transition id="t-emit-2a437a7f">
+        <name>
+          <text>Emit</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>40.0</timeDelay>
+          <delayMeanValue>40.0</delayMeanValue>
+          <distribution>exp</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="387" y="310"/>
+        </graphics>
+      </transition>
+      <transition id="t-returning-3-69e68be5">
+        <name>
+          <text>Returning 3</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>5.0</timeDelay>
+          <delayMeanValue>5.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+        </toolspecific>
+        <graphics>
+          <position x="684" y="667"/>
+        </graphics>
+      </transition>
+      <transition id="t-picking-up-1-b5db420b">
+        <name>
+          <text>Picking up 1</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>8.0</timeDelay>
+          <delayMeanValue>8.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="542" y="313"/>
+        </graphics>
+      </transition>
+      <arc id="arc-bfa360e2" source="p-moved-1-99d37830" target="t-putting-down-1-ece3e7e3">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-c80c5823" source="p-moved-2-6d1d5f42" target="t-putting-down-2-d4d0abac">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-063a677a" source="p-taken-2-505c6813" target="t-moving-2-60169d23">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-8aeaf3e3" source="p-moved-3-953952a8" target="t-putting-down-3-6fb6bb98">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-dd79dc62" source="p-ready-back-2-b483ad3c" target="t-returning-2-d1a593ca">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-d34b57ab" source="p-taken-3-97e875c1" target="t-moving-3-4ef09692">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-d442dbb2" source="p-processed-2-ec0b06fd" target="t-picking-up-3-b52e52f6">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-e774bd6e" source="p-ready-3-906d149e" target="t-picking-up-3-b52e52f6">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-3c1f72ba" source="p-taken-1-a829db77" target="t-moving-1-288cb942">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-27b09f95" source="p-free-slots-1-94079023" target="t-processing-1-43c4da3d">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-8ab5515b" source="p-at-worker-1-a48725fe" target="t-processing-1-43c4da3d">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-70c76402" source="p-at-worker-2-2d699bd0" target="t-processing-2-9ca1f920">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-068d18d9" source="p-free-slots-2-95309f15" target="t-processing-2-9ca1f920">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-f11e209d" source="p-ready-back-1-779a764f" target="t-returning-1-5e20bc37">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-6157f98e" source="p-processed-1-197f854f" target="t-picking-up-2-359cdd06">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-0f4a92f3" source="p-ready-2-392ca19e" target="t-picking-up-2-359cdd06">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-39ac40c0" source="p-ready-e9c7bb9b" target="t-emit-2a437a7f">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-21689977" source="p-ready-back-3-01512f82" target="t-returning-3-69e68be5">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-c8cbad1b" source="p-arrival-point-41303b34" target="t-picking-up-1-b5db420b">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-bd99a7c0" source="p-ready-1-125c0d70" target="t-picking-up-1-b5db420b">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-87cecb69" source="t-putting-down-1-ece3e7e3" target="p-ready-back-1-779a764f">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-912cdf78" source="t-putting-down-1-ece3e7e3" target="p-at-worker-1-a48725fe">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-6b30b607" source="t-putting-down-2-d4d0abac" target="p-at-worker-2-2d699bd0">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-0dc1e8cf" source="t-putting-down-2-d4d0abac" target="p-ready-back-2-b483ad3c">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-744905cb" source="t-moving-2-60169d23" target="p-moved-2-6d1d5f42">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-b2abcb2f" source="t-putting-down-3-6fb6bb98" target="p-ready-back-3-01512f82">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-245ade63" source="t-putting-down-3-6fb6bb98" target="p-storage-ba7fb4b2">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-2dd13cb1" source="t-returning-2-d1a593ca" target="p-ready-2-392ca19e">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-72ea2436" source="t-moving-3-4ef09692" target="p-moved-3-953952a8">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-678ab008" source="t-picking-up-3-b52e52f6" target="p-taken-3-97e875c1">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-f4a3f71e" source="t-moving-1-288cb942" target="p-moved-1-99d37830">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-f6b165a8" source="t-processing-1-43c4da3d" target="p-free-slots-1-94079023">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-a6e9d9da" source="t-processing-1-43c4da3d" target="p-processed-1-197f854f">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-ce3962d4" source="t-processing-2-9ca1f920" target="p-processed-2-ec0b06fd">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-6b2a1f9b" source="t-processing-2-9ca1f920" target="p-free-slots-2-95309f15">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-e58d7f7a" source="t-returning-1-5e20bc37" target="p-ready-1-125c0d70">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-3a3d6a3c" source="t-picking-up-2-359cdd06" target="p-taken-2-505c6813">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-c9229580" source="t-emit-2a437a7f" target="p-ready-e9c7bb9b">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-d3028ab6" source="t-emit-2a437a7f" target="p-arrival-point-41303b34">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-43c946b8" source="t-returning-3-69e68be5" target="p-ready-3-906d149e">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-0aef7d89" source="t-picking-up-1-b5db420b" target="p-taken-1-a829db77">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+    </page>
+    <page id="object1">
+      <name>
+        <text>Type 2</text>
+      </name>
+      <toolspecific tool="PetriObjModel" version="2.3.0">
+        <petriObject height="846" index="1" name="Type 2" priority="1" width="2114" x="1117" y="97"/>
+      </toolspecific>
+      <place id="p-ready-be928cde">
+        <name>
+          <text>Ready</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+        <graphics>
+          <position x="1293" y="302"/>
+        </graphics>
+      </place>
+      <place id="p-taken-2-5932a6c0">
+        <name>
+          <text>Taken 2</text>
+        </name>
+        <graphics>
+          <position x="2226" y="311"/>
+        </graphics>
+      </place>
+      <place id="p-storage-4506347d">
+        <name>
+          <text>Storage</text>
+        </name>
+        <graphics>
+          <position x="3170" y="311"/>
+        </graphics>
+      </place>
+      <place id="p-ready-3-80acbd6f">
+        <name>
+          <text>Ready 3</text>
+        </name>
+        <graphics>
+          <position x="2786" y="438"/>
+        </graphics>
+      </place>
+      <place id="p-requests-3-2e9d77d3">
+        <name>
+          <text>Requests 3</text>
+        </name>
+        <graphics>
+          <position x="2625" y="435"/>
+        </graphics>
+      </place>
+      <place id="p-ready-1-daa724bf">
+        <name>
+          <text>Ready 1</text>
+        </name>
+        <graphics>
+          <position x="1522" y="430"/>
+        </graphics>
+      </place>
+      <place id="p-robots-s-8670483f">
+        <name>
+          <text>Robots S</text>
+        </name>
+        <graphics>
+          <position x="3084" y="576"/>
+        </graphics>
+      </place>
+      <place id="p-at-worker-1-2dce210d">
+        <name>
+          <text>At worker 1</text>
+        </name>
+        <graphics>
+          <position x="1905" y="308"/>
+        </graphics>
+      </place>
+      <place id="p-free-slots-2-1a2afaca">
+        <name>
+          <text>Free slots 2</text>
+        </name>
+        <initialMarking>
+          <text>3</text>
+        </initialMarking>
+        <graphics>
+          <position x="2632" y="220"/>
+        </graphics>
+      </place>
+      <place id="p-moved-1-87e84ccc">
+        <name>
+          <text>Moved 1</text>
+        </name>
+        <graphics>
+          <position x="1740" y="309"/>
+        </graphics>
+      </place>
+      <place id="p-processed-2-076cafba">
+        <name>
+          <text>Processed 2</text>
+        </name>
+        <graphics>
+          <position x="2705" y="307"/>
+        </graphics>
+      </place>
+      <place id="p-arrival-point-edebadc8">
+        <name>
+          <text>Arrival point</text>
+        </name>
+        <graphics>
+          <position x="1443" y="305"/>
+        </graphics>
+      </place>
+      <place id="p-long-ap-to-p2-d6db0ea5">
+        <name>
+          <text>Long AP To P2</text>
+        </name>
+        <graphics>
+          <position x="1767" y="861"/>
+        </graphics>
+      </place>
+      <place id="p-taken-1-db63db34">
+        <name>
+          <text>Taken 1</text>
+        </name>
+        <graphics>
+          <position x="1595" y="306"/>
+        </graphics>
+      </place>
+      <place id="p-taken-3-f26842e0">
+        <name>
+          <text>Taken 3</text>
+        </name>
+        <graphics>
+          <position x="2861" y="308"/>
+        </graphics>
+      </place>
+      <place id="p-processed-1-df04b994">
+        <name>
+          <text>Processed 1</text>
+        </name>
+        <graphics>
+          <position x="2071" y="309"/>
+        </graphics>
+      </place>
+      <place id="p-moved-2-8c90b456">
+        <name>
+          <text>Moved 2</text>
+        </name>
+        <graphics>
+          <position x="2374" y="306"/>
+        </graphics>
+      </place>
+      <place id="p-ready-2-5bec33ac">
+        <name>
+          <text>Ready 2</text>
+        </name>
+        <graphics>
+          <position x="2149" y="433"/>
+        </graphics>
+      </place>
+      <place id="p-robots-p2-0e6f9f37">
+        <name>
+          <text>Robots P2</text>
+        </name>
+        <graphics>
+          <position x="2452" y="574"/>
+        </graphics>
+      </place>
+      <place id="p-robots-ap-9718bca7">
+        <name>
+          <text>Robots AP</text>
+        </name>
+        <initialMarking>
+          <text>3</text>
+        </initialMarking>
+        <graphics>
+          <position x="1445" y="559"/>
+        </graphics>
+      </place>
+      <place id="p-free-slots-1-a882628f">
+        <name>
+          <text>Free slots 1</text>
+        </name>
+        <initialMarking>
+          <text>3</text>
+        </initialMarking>
+        <graphics>
+          <position x="2012" y="215"/>
+        </graphics>
+      </place>
+      <place id="p-requests-1-3d79fa46">
+        <name>
+          <text>Requests 1</text>
+        </name>
+        <graphics>
+          <position x="1360" y="428"/>
+        </graphics>
+      </place>
+      <place id="p-at-worker-2-8544a801">
+        <name>
+          <text>At worker 2</text>
+        </name>
+        <graphics>
+          <position x="2537" y="310"/>
+        </graphics>
+      </place>
+      <place id="p-moved-3-0658b898">
+        <name>
+          <text>Moved 3</text>
+        </name>
+        <graphics>
+          <position x="3009" y="310"/>
+        </graphics>
+      </place>
+      <place id="p-long-p2-to-ap-8efba1d9">
+        <name>
+          <text>Long P2 To AP</text>
+        </name>
+        <graphics>
+          <position x="1893" y="745"/>
+        </graphics>
+      </place>
+      <place id="p-robots-p1-4088b096">
+        <name>
+          <text>Robots P1</text>
+        </name>
+        <graphics>
+          <position x="1819" y="566"/>
+        </graphics>
+      </place>
+      <place id="p-requests-2-ec9a639a">
+        <name>
+          <text>Requests 2</text>
+        </name>
+        <graphics>
+          <position x="2001" y="429"/>
+        </graphics>
+      </place>
+      <transition id="t-picking-up-1-55677f27">
+        <name>
+          <text>Picking up 1</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>8.0</timeDelay>
+          <delayMeanValue>8.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="1520" y="307"/>
+        </graphics>
+      </transition>
+      <transition id="t-long-p2-to-ap-2-57a032ad">
+        <name>
+          <text>Long P2 To AP 2</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>6.0</timeDelay>
+          <delayMeanValue>6.0</delayMeanValue>
+          <priority>1</priority>
+        </toolspecific>
+        <graphics>
+          <position x="1651" y="742"/>
+        </graphics>
+      </transition>
+      <transition id="t-picking-up-3-2061da40">
+        <name>
+          <text>Picking up 3</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>8.0</timeDelay>
+          <delayMeanValue>8.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="2785" y="306"/>
+        </graphics>
+      </transition>
+      <transition id="t-putting-down-3-359a373a">
+        <name>
+          <text>Putting down 3</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>8.0</timeDelay>
+          <delayMeanValue>8.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="3085" y="309"/>
+        </graphics>
+      </transition>
+      <transition id="t-long-p2-to-ap-b-b40d0abe">
+        <name>
+          <text>Long P2 To AP B</text>
+        </name>
+        <graphics>
+          <position x="1892" y="633"/>
+        </graphics>
+      </transition>
+      <transition id="t-moving-3-3d65126e">
+        <name>
+          <text>Moving 3</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>5.0</timeDelay>
+          <delayMeanValue>5.0</delayMeanValue>
+        </toolspecific>
+        <graphics>
+          <position x="2932" y="309"/>
+        </graphics>
+      </transition>
+      <transition id="t-long-ap-to-p2-e6fdded4">
+        <name>
+          <text>Long AP To P2</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>6.0</timeDelay>
+          <delayMeanValue>6.0</delayMeanValue>
+        </toolspecific>
+        <graphics>
+          <position x="1640" y="859"/>
+        </graphics>
+      </transition>
+      <transition id="t-p1-to-p2-b2311073">
+        <name>
+          <text>P1 To P2</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>7.0</timeDelay>
+          <delayMeanValue>7.0</delayMeanValue>
+          <priority>1</priority>
+        </toolspecific>
+        <graphics>
+          <position x="2155" y="516"/>
+        </graphics>
+      </transition>
+      <transition id="t-putting-down-1-a592ac00">
+        <name>
+          <text>Putting down 1</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>8.0</timeDelay>
+          <delayMeanValue>8.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="1821" y="307"/>
+        </graphics>
+      </transition>
+      <transition id="t-requesting-2-5ad39dc8">
+        <name>
+          <text>Requesting 2</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <priority>2</priority>
+        </toolspecific>
+        <graphics>
+          <position x="2092" y="429"/>
+        </graphics>
+      </transition>
+      <transition id="t-emit-9561b0d3">
+        <name>
+          <text>Emit</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>40.0</timeDelay>
+          <delayMeanValue>40.0</delayMeanValue>
+          <distribution>exp</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="1365" y="304"/>
+        </graphics>
+      </transition>
+      <transition id="t-long-p1-to-p2-d483e191">
+        <name>
+          <text>Long P1 To P2</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>7.0</timeDelay>
+          <delayMeanValue>7.0</delayMeanValue>
+          <priority>1</priority>
+        </toolspecific>
+        <graphics>
+          <position x="2159" y="867"/>
+        </graphics>
+      </transition>
+      <transition id="t-p1-to-ap-07a44fa8">
+        <name>
+          <text>P1 To AP</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>6.0</timeDelay>
+          <delayMeanValue>6.0</delayMeanValue>
+          <priority>1</priority>
+        </toolspecific>
+        <graphics>
+          <position x="1652" y="620"/>
+        </graphics>
+      </transition>
+      <transition id="t-processing-2-bdc1f1db">
+        <name>
+          <text>Processing 2</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>100.0</timeDelay>
+          <delayMeanValue>100.0</delayMeanValue>
+          <distribution>exp</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="2629" y="309"/>
+        </graphics>
+      </transition>
+      <transition id="t-processing-1-e3267c78">
+        <name>
+          <text>Processing 1</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>60.0</timeDelay>
+          <delayMeanValue>60.0</delayMeanValue>
+          <standardDeviation>10.0</standardDeviation>
+          <priority>1</priority>
+          <distribution>norm</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="2012" y="308"/>
+        </graphics>
+      </transition>
+      <transition id="t-returning-to-p2-910cc24e">
+        <name>
+          <text>Returning To P2</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>5.0</timeDelay>
+          <delayMeanValue>5.0</delayMeanValue>
+        </toolspecific>
+        <graphics>
+          <position x="2825" y="575"/>
+        </graphics>
+      </transition>
+      <transition id="t-p2-to-p1-693da9bd">
+        <name>
+          <text>P2 To P1</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>7.0</timeDelay>
+          <delayMeanValue>7.0</delayMeanValue>
+          <priority>1</priority>
+        </toolspecific>
+        <graphics>
+          <position x="2157" y="630"/>
+        </graphics>
+      </transition>
+      <transition id="t-moving-2-6e31b391">
+        <name>
+          <text>Moving 2</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>7.0</timeDelay>
+          <delayMeanValue>7.0</delayMeanValue>
+        </toolspecific>
+        <graphics>
+          <position x="2297" y="308"/>
+        </graphics>
+      </transition>
+      <transition id="t-requesting-1-041c7001">
+        <name>
+          <text>Requesting 1</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <priority>2</priority>
+        </toolspecific>
+        <graphics>
+          <position x="1457" y="429"/>
+        </graphics>
+      </transition>
+      <transition id="t-moving-1-ed3d6232">
+        <name>
+          <text>Moving 1</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>6.0</timeDelay>
+          <delayMeanValue>6.0</delayMeanValue>
+          <standardDeviation>2.0</standardDeviation>
+        </toolspecific>
+        <graphics>
+          <position x="1663" y="307"/>
+        </graphics>
+      </transition>
+      <transition id="t-picking-up-2-f309bf74">
+        <name>
+          <text>Picking up 2</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>8.0</timeDelay>
+          <delayMeanValue>8.0</delayMeanValue>
+          <standardDeviation>1.0</standardDeviation>
+          <distribution>unif</distribution>
+        </toolspecific>
+        <graphics>
+          <position x="2147" y="308"/>
+        </graphics>
+      </transition>
+      <transition id="t-long-p2-to-ap-1-dbfca829">
+        <name>
+          <text>Long P2 To AP 1</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>7.0</timeDelay>
+          <delayMeanValue>7.0</delayMeanValue>
+        </toolspecific>
+        <graphics>
+          <position x="2151" y="748"/>
+        </graphics>
+      </transition>
+      <transition id="t-ap-to-p1-b39f66fa">
+        <name>
+          <text>AP To P1</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <timeDelay>6.0</timeDelay>
+          <delayMeanValue>6.0</delayMeanValue>
+          <priority>1</priority>
+        </toolspecific>
+        <graphics>
+          <position x="1652" y="504"/>
+        </graphics>
+      </transition>
+      <transition id="t-requesting-3-b9ad2b6f">
+        <name>
+          <text>Requesting 3</text>
+        </name>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <priority>2</priority>
+        </toolspecific>
+        <graphics>
+          <position x="2721" y="437"/>
+        </graphics>
+      </transition>
+      <transition id="t-long-ap-to-p2-b-92c8480c">
+        <name>
+          <text>Long AP To P2 B</text>
+        </name>
+        <graphics>
+          <position x="1771" y="669"/>
+        </graphics>
+      </transition>
+      <transition id="t-putting-down-2-89ada6f3">
+        <name>
+          <text>Putting down 2</text>
+        </name>
+        <graphics>
+          <position x="2450" y="308"/>
+        </graphics>
+      </transition>
+      <arc id="arc-ec92b731" source="p-arrival-point-edebadc8" target="t-picking-up-1-55677f27">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-f3db81d4" source="p-ready-1-daa724bf" target="t-picking-up-1-55677f27">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-31ac1948" source="p-long-p2-to-ap-8efba1d9" target="t-long-p2-to-ap-2-57a032ad">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-a9bb74a2" source="p-requests-1-3d79fa46" target="t-long-p2-to-ap-2-57a032ad">
+        <inscription>
+          <text>1</text>
+        </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <informational>true</informational>
+        </toolspecific>
+      </arc>
+      <arc id="arc-f962f1a2" source="p-processed-2-076cafba" target="t-picking-up-3-2061da40">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-99e34bd0" source="p-ready-3-80acbd6f" target="t-picking-up-3-2061da40">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-4d4a1a23" source="p-moved-3-0658b898" target="t-putting-down-3-359a373a">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-63c1fd86" source="p-long-p2-to-ap-8efba1d9" target="t-long-p2-to-ap-b-b40d0abe">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-e0875825" source="p-taken-3-f26842e0" target="t-moving-3-3d65126e">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-c8b7d0c7" source="p-robots-ap-9718bca7" target="t-long-ap-to-p2-e6fdded4">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-eb8f6654" source="p-requests-3-2e9d77d3" target="t-long-ap-to-p2-e6fdded4">
+        <inscription>
+          <text>1</text>
+        </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <informational>true</informational>
+        </toolspecific>
+      </arc>
+      <arc id="arc-26475134" source="p-robots-p1-4088b096" target="t-p1-to-p2-b2311073">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-f353757a" source="p-requests-3-2e9d77d3" target="t-p1-to-p2-b2311073">
+        <inscription>
+          <text>1</text>
+        </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <informational>true</informational>
+        </toolspecific>
+      </arc>
+      <arc id="arc-9cb4334c" source="p-moved-1-87e84ccc" target="t-putting-down-1-a592ac00">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-f5fa70e4" source="p-robots-p1-4088b096" target="t-requesting-2-5ad39dc8">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-8c7d2c1d" source="p-requests-2-ec9a639a" target="t-requesting-2-5ad39dc8">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-3ee8e802" source="p-ready-be928cde" target="t-emit-9561b0d3">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-37dd18b7" source="p-long-ap-to-p2-d6db0ea5" target="t-long-p1-to-p2-d483e191">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-407da3a4" source="p-requests-3-2e9d77d3" target="t-long-p1-to-p2-d483e191">
+        <inscription>
+          <text>1</text>
+        </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <informational>true</informational>
+        </toolspecific>
+      </arc>
+      <arc id="arc-9342493a" source="p-robots-p1-4088b096" target="t-p1-to-ap-07a44fa8">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-33d8bbae" source="p-requests-1-3d79fa46" target="t-p1-to-ap-07a44fa8">
+        <inscription>
+          <text>1</text>
+        </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <informational>true</informational>
+        </toolspecific>
+      </arc>
+      <arc id="arc-b094f404" source="p-at-worker-2-8544a801" target="t-processing-2-bdc1f1db">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-66ac0cb5" source="p-free-slots-2-1a2afaca" target="t-processing-2-bdc1f1db">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-dff5a409" source="p-free-slots-1-a882628f" target="t-processing-1-e3267c78">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-de7dc81d" source="p-at-worker-1-2dce210d" target="t-processing-1-e3267c78">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-a9a9e6c8" source="p-robots-s-8670483f" target="t-returning-to-p2-910cc24e">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-1318fee4" source="p-robots-p2-0e6f9f37" target="t-p2-to-p1-693da9bd">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-228a1551" source="p-requests-2-ec9a639a" target="t-p2-to-p1-693da9bd">
+        <inscription>
+          <text>1</text>
+        </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <informational>true</informational>
+        </toolspecific>
+      </arc>
+      <arc id="arc-cef92d42" source="p-taken-2-5932a6c0" target="t-moving-2-6e31b391">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-69120e8e" source="p-robots-ap-9718bca7" target="t-requesting-1-041c7001">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-799ef981" source="p-requests-1-3d79fa46" target="t-requesting-1-041c7001">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-e34a111d" source="p-taken-1-db63db34" target="t-moving-1-ed3d6232">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-0bfe1fd7" source="p-processed-1-df04b994" target="t-picking-up-2-f309bf74">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-90ef75f6" source="p-ready-2-5bec33ac" target="t-picking-up-2-f309bf74">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-6f1b3654" source="p-robots-p2-0e6f9f37" target="t-long-p2-to-ap-1-dbfca829">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-1cfccd93" source="p-requests-1-3d79fa46" target="t-long-p2-to-ap-1-dbfca829">
+        <inscription>
+          <text>1</text>
+        </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <informational>true</informational>
+        </toolspecific>
+      </arc>
+      <arc id="arc-ef6ce415" source="p-robots-ap-9718bca7" target="t-ap-to-p1-b39f66fa">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-ce4070c3" source="p-requests-2-ec9a639a" target="t-ap-to-p1-b39f66fa">
+        <inscription>
+          <text>1</text>
+        </inscription>
+        <toolspecific tool="PetriObjModel" version="2.3.0">
+          <informational>true</informational>
+        </toolspecific>
+      </arc>
+      <arc id="arc-a1d4851a" source="p-robots-p2-0e6f9f37" target="t-requesting-3-b9ad2b6f">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-1616c09b" source="p-requests-3-2e9d77d3" target="t-requesting-3-b9ad2b6f">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-7c538ec6" source="p-long-ap-to-p2-d6db0ea5" target="t-long-ap-to-p2-b-92c8480c">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-7930a323" source="p-moved-2-8c90b456" target="t-putting-down-2-89ada6f3">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-2a1baaa3" source="t-picking-up-1-55677f27" target="p-taken-1-db63db34">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-d61c8a2d" source="t-long-p2-to-ap-2-57a032ad" target="p-robots-ap-9718bca7">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-a0a41422" source="t-picking-up-3-2061da40" target="p-taken-3-f26842e0">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-ceca4c62" source="t-putting-down-3-359a373a" target="p-storage-4506347d">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-5354f082" source="t-putting-down-3-359a373a" target="p-robots-s-8670483f">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-9818ccb6" source="t-long-p2-to-ap-b-b40d0abe" target="p-robots-p1-4088b096">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-39b9eeb3" source="t-moving-3-3d65126e" target="p-moved-3-0658b898">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-dd3234a4" source="t-long-ap-to-p2-e6fdded4" target="p-long-ap-to-p2-d6db0ea5">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-df0f4101" source="t-p1-to-p2-b2311073" target="p-robots-p2-0e6f9f37">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-0b5386b1" source="t-putting-down-1-a592ac00" target="p-at-worker-1-2dce210d">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-8d026c2f" source="t-putting-down-1-a592ac00" target="p-robots-p1-4088b096">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-e8733260" source="t-requesting-2-5ad39dc8" target="p-ready-2-5bec33ac">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-7beda63e" source="t-emit-9561b0d3" target="p-ready-be928cde">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-2795051f" source="t-emit-9561b0d3" target="p-arrival-point-edebadc8">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-0d8b3ba9" source="t-emit-9561b0d3" target="p-requests-1-3d79fa46">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-aa6327bb" source="t-long-p1-to-p2-d483e191" target="p-robots-p2-0e6f9f37">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-e2a42253" source="t-p1-to-ap-07a44fa8" target="p-robots-ap-9718bca7">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-1a0b7c6f" source="t-processing-2-bdc1f1db" target="p-processed-2-076cafba">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-279f5972" source="t-processing-2-bdc1f1db" target="p-free-slots-2-1a2afaca">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-835ad812" source="t-processing-2-bdc1f1db" target="p-requests-3-2e9d77d3">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-9f20d4db" source="t-processing-1-e3267c78" target="p-free-slots-1-a882628f">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-191f8fc2" source="t-processing-1-e3267c78" target="p-processed-1-df04b994">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-6ab50e8a" source="t-processing-1-e3267c78" target="p-requests-2-ec9a639a">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-6c3e199f" source="t-returning-to-p2-910cc24e" target="p-robots-p2-0e6f9f37">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-0bda8427" source="t-p2-to-p1-693da9bd" target="p-robots-p1-4088b096">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-50b06260" source="t-moving-2-6e31b391" target="p-moved-2-8c90b456">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-2f343bce" source="t-requesting-1-041c7001" target="p-ready-1-daa724bf">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-88e7e9e7" source="t-moving-1-ed3d6232" target="p-moved-1-87e84ccc">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-c5b9eb19" source="t-picking-up-2-f309bf74" target="p-taken-2-5932a6c0">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-c585f49d" source="t-long-p2-to-ap-1-dbfca829" target="p-long-p2-to-ap-8efba1d9">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-e1f3a9e2" source="t-ap-to-p1-b39f66fa" target="p-robots-p1-4088b096">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-29e70061" source="t-requesting-3-b9ad2b6f" target="p-ready-3-80acbd6f">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-2e75164a" source="t-long-ap-to-p2-b-92c8480c" target="p-robots-p1-4088b096">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-6d02f202" source="t-putting-down-2-89ada6f3" target="p-at-worker-2-8544a801">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+      <arc id="arc-066ebd9d" source="t-putting-down-2-89ada6f3" target="p-robots-p2-0e6f9f37">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
+    </page>
+    <toolspecific tool="PetriObjModel" version="2.3.0">
+      <petriObjectLinks/>
+    </toolspecific>
+  </net>
+</pnml>
