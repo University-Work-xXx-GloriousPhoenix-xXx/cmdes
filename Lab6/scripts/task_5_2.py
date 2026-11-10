@@ -24,6 +24,7 @@ PARAMS = {
     13: (5, 0.2, 4, 3, 90, 18, 72, 5000),
     14: (5, 0.2, 4, 3, 72, 18, 36, 5000),
     15: (5, 0.2, 4, 3, 72, 18, 72, 2500),
+    16: (5, 0.2, 4, 3, 72, 18, 72, 10000),
 }
 
 
@@ -39,7 +40,7 @@ def sanity(run, pm, px, T, mu, p, S, s, N_clients, left, queued, sold_tot, serve
     if rest < 0 or rest > px.get("Queue", 0):
         w.append(f"Total clients − Served − Left = {rest:.0f}, очікується 0…{px.get('Queue', 0):.0f} (черга на кінець)")
     # 3. Total sold рахує прямі й відкладені продажі; різниця з покупцями — це Sold, що ще не злитий (0 … max Sold)
-    rest2 = N_clients - sold_tot - left
+    rest2 = N_clients - (sold_tot - (S - PARAMS[run][6])) - left   # Sold(0) = S − L потрапляє в Total sold
     if rest2 < 0 or rest2 > px.get("Sold", 0):
         w.append(f"Total clients − Total sold − Left = {rest2:.0f}, очікується 0…{px.get('Sold', 0):.0f}")
     # 4. Частка тих, хто пішов ≈ 1 − p (4σ біноміального розкиду); при p = 0 і p = 1 — точно
@@ -60,6 +61,11 @@ def sanity(run, pm, px, T, mu, p, S, s, N_clients, left, queued, sold_tot, serve
     # 7. Пріоритет Serve: продаж не втрачається, поки запас > 0
     if left > 0 and zmin >= 1:
         w.append("Left > 0, але запас ніколи не був нульовим: у Serve немає пріоритету над Leave/To queue")
+    # 9. Вага дуги Sold→Order має дорівнювати S − s: Sold досягає її, а за час між перевірками додається ≈ μ·t
+    smax = px.get("Sold", 0)
+    lo, hi = S - s, S - s + 2 * mu * PARAMS[run][2]
+    if smax < lo or smax > hi:
+        w.append(f"Sold max = {smax:.0f}, очікується {lo}…{hi:.0f}: перевірте вагу дуги Sold→Order (має бути {S - s}) і початкову розмітку")
     # 8. Обсяг замовлення не менший за S − s
     if isinstance(avg_order, float) and avg_order < (S - s) - 1e-9:
         w.append(f"середній обсяг замовлення {avg_order:.1f} < S − s = {S - s}")
@@ -67,6 +73,9 @@ def sanity(run, pm, px, T, mu, p, S, s, N_clients, left, queued, sold_tot, serve
 
 
 def calc(pm, px, tm, T, run):
+    if run not in PARAMS:
+        print(f"   !! Файл {run}.txt пропущено: прогону {run} немає в PARAMS (таблиця має прогони 1–{max(PARAMS)})")
+        return None
     mu, p, t, d, S, s, L, T_tab = PARAMS[run]
     if abs(T - T_tab) > 1e-9:
         print(f"   !! УВАГА: T для прогону {run}: {T:g} (скрипт) ≠ {T_tab:g} (PARAMS)")
@@ -95,10 +104,10 @@ TASK = dict(
     name="5-2",
     headers=HEADERS,
     default_t=5000,
-    override_t={15: 2500},
+    override_t={15: 2500, 16: 10000},
     calc=calc,
     needs_run=True,
-    table_rows=HEADERS,
+    table_rows=HEADERS,        # порядок рядків вихідних даних у таблиці
 )
 
 if __name__ == "__main__":

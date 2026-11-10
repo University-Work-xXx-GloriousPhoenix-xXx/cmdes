@@ -67,6 +67,8 @@ def run_task(task):
         pm, px, tm = parse(f.read_text(encoding="utf-8", errors="ignore"))
         try:
             vals = task["calc"](pm, px, tm, T, run=n) if task.get("needs_run") else task["calc"](pm, px, tm, T)
+            if vals is None:          # calc пропустив цей файл
+                continue
             rows.append([n, T, *vals])
         except KeyError as e:
             sys.exit(f"{f.name}: у логу немає очікуваного елемента {e}. Перевірте назви місць і переходів.")
