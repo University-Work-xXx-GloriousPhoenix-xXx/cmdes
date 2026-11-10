@@ -484,3 +484,7 @@ $RECYCLE.BIN/
 # Images
 *.png
 *.jpg
+
+# Results
+*.csv
+*.txt
