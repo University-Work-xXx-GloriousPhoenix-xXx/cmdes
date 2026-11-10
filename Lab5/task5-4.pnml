@@ -8,8 +8,8 @@
       <name>
         <text>Free elements</text>
       </name>
-      <toolspecific tool="PetriObjModel" version="2.3.0">
-        <petriObject index="0" name="Free elements" priority="0" x="0" y="0"/>
+      <toolspecific tool="PetriObjModel" version="2.8.1">
+        <petriObject contentVisible="true" index="0" modelId="free" name="Free elements" priority="0" x="0" y="0"/>
       </toolspecific>
       <place id="p-total-sold-9cc79359">
         <name>
@@ -143,15 +143,23 @@
           <position x="1496" y="607"/>
         </graphics>
       </place>
+      <place id="p-p1-4a46647d">
+        <name>
+          <text>Total clients</text>
+        </name>
+        <graphics>
+          <position x="641" y="373"/>
+        </graphics>
+      </place>
       <transition id="t-drain-sold-ce585627">
         <name>
           <text>Drain sold</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <priority>2</priority>
         </toolspecific>
         <graphics>
-          <position x="1239" y="728"/>
+          <position x="1240" y="728"/>
         </graphics>
       </transition>
       <transition id="t-relocating-fa0626cf">
@@ -166,7 +174,7 @@
         <name>
           <text>Deliver</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>3.0</timeDelay>
           <delayMeanValue>3.0</delayMeanValue>
         </toolspecific>
@@ -178,7 +186,7 @@
         <name>
           <text>To queue</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <probability>0.2</probability>
         </toolspecific>
         <graphics>
@@ -189,7 +197,7 @@
         <name>
           <text>Leave</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <probability>0.8</probability>
         </toolspecific>
         <graphics>
@@ -208,7 +216,7 @@
         <name>
           <text>Checking</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>4.0</timeDelay>
           <delayMeanValue>4.0</delayMeanValue>
         </toolspecific>
@@ -220,29 +228,29 @@
         <name>
           <text>Order</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <priority>1</priority>
         </toolspecific>
         <graphics>
-          <position x="1232" y="603"/>
+          <position x="1233" y="603"/>
         </graphics>
       </transition>
       <transition id="t-reserving-06ed3ca8">
         <name>
           <text>Reserving</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <priority>2</priority>
         </toolspecific>
         <graphics>
-          <position x="725" y="607"/>
+          <position x="726" y="607"/>
         </graphics>
       </transition>
       <transition id="t-enter-c448eeed">
         <name>
           <text>Enter</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <timeDelay>0.2</timeDelay>
           <delayMeanValue>0.2</delayMeanValue>
           <distribution>exp</distribution>
@@ -255,18 +263,18 @@
         <name>
           <text>Serve</text>
         </name>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <priority>1</priority>
         </toolspecific>
         <graphics>
-          <position x="900" y="482"/>
+          <position x="901" y="482"/>
         </graphics>
       </transition>
       <arc id="arc-bbb5e1ac" source="p-drain-trigger-448eb9df" target="t-drain-sold-ce585627">
         <inscription>
           <text>1</text>
         </inscription>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <informational>true</informational>
         </toolspecific>
       </arc>
@@ -319,7 +327,7 @@
         <inscription>
           <text>54</text>
         </inscription>
-        <toolspecific tool="PetriObjModel" version="2.3.0">
+        <toolspecific tool="PetriObjModel" version="2.8.1">
           <informational>true</informational>
         </toolspecific>
       </arc>
@@ -433,8 +441,13 @@
           <text>1</text>
         </inscription>
       </arc>
+      <arc id="arc-7d158386" source="t-enter-c448eeed" target="p-p1-4a46647d">
+        <inscription>
+          <text>1</text>
+        </inscription>
+      </arc>
     </page>
-    <toolspecific tool="PetriObjModel" version="2.3.0">
+    <toolspecific tool="PetriObjModel" version="2.8.1">
       <petriObjectLinks/>
     </toolspecific>
   </net>
